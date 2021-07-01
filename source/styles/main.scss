@@ -1,0 +1,25 @@
+/*!
+Theme Name: PressX
+Description: Site tagline
+Author: PressX
+Author URI: https://www.pressx.co
+Version: 1.0.0
+*/
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+// Setting variables and mixins
+@import "global/_animations";
+@import "global/_wp";
+@import "global/_global";
+@import "global/_header";
+@import "global/_breadcrumbs";
+@import "global/_comments";
+@import "global/_moby";
+@import "global/_post";
+@import "global/_theme";
+@import "global/_footer";
+
+// Pages - The page specific styles

@@ -1,0 +1,123 @@
+/*--*--*--*--*--*--*--*--*--*--*-*--*--*--*--*--*--*--*--*
+
+	* ------- Global Style ------- *
+
+-*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+
+// WARNING: TRY MAKING EVERYTHING GLOBAL AND MODULAR AS MUCH AS POSSIBLE!
+
+html {
+	font-size: 15px;
+	height: 100%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+	font-size: 15px;
+	height: 100%;
+	color: #333;
+	@apply bg-gray-100;
+}
+
+figure {
+	margin: 0;
+
+	& > img {
+		max-width: 100%;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: inherit;
+}
+
+h1 {
+	@apply text-4xl my-4;
+	line-height: normal;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+h2 {
+	@apply text-3xl my-3;
+	line-height: normal;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+h3 {
+	@apply text-2xl my-2;
+	line-height: normal;
+	font-weight: normal;
+	letter-spacing: -0.7px;
+}
+
+h4 {
+	@apply text-xl my-1;
+	line-height: normal;
+	font-weight: normal;
+	letter-spacing: -0.5px;
+}
+
+h5 {
+	@apply text-lg;
+	line-height: normal;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+h6 {
+	@apply text-base;
+	line-height: normal;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+p {
+	@apply leading-7 my-4;
+}
+
+pre,
+ul,
+ol {
+	@apply my-4;
+}
+
+img,
+iframe {
+	max-width: 100%;
+	width: 100%;
+}
+
+[type="text"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="week"],
+[multiple],
+textarea,
+select {
+	@apply rounded-md border-gray-200 text-gray-600;
+}
+
+.container {
+	@apply mx-auto px-8 lg:px-6;
+}
+
+.container-full {
+	@apply w-full;
+}

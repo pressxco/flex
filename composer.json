@@ -1,0 +1,13 @@
+{
+    "name": "pressx/atakanoz",
+    "type": "project",
+    "authors": [
+        {
+            "name": "PressX",
+            "email": "info@pressx.co"
+        }
+    ],
+    "require": {
+        "htmlburger/carbon-fields": "^3.3"
+    }
+}

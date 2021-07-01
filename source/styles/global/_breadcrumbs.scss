@@ -1,0 +1,34 @@
+/* =============================================================================
+  Breadcrumbs
+========================================================================== */
+
+.breadcrumbs {
+	@apply flex;
+
+	.trail-items {
+		li {
+			@apply inline-flex text-gray-700 text-sm font-medium;
+
+			a {
+				@apply text-gray-700 hover:text-gray-500 ease-out transition duration-200;
+			}
+
+			&:before {
+				content: "/";
+				@apply px-2;
+			}
+
+			&.trail-begin {
+				&:before {
+					content: none;
+				}
+			}
+
+			&.trail-end {
+				span {
+					@apply text-gray-500;
+				}
+			}
+		}
+	}
+}
