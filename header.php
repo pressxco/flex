@@ -55,20 +55,23 @@
 								array(
 									'theme_location' => 'primary',
 									'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
-									'container'      => false,
 									'menu_class'     => 'primary-menu',
-									'walker'         => new PX_Walker(),
-									'fallback_cb'    => false,
+									'fallback_cb'    => 'fx_main_menu_fallback',
+									'container'      => false,
 									'depth'          => 3,
 								)
 							);
+
+							// fx_optimized_nav( 'primary', '<ul class="%2$s">%3$s</ul>', 'primary-menu', 'fx_main_menu_fallback', 3 );
 							?>
 
 					</nav>
 
+					<?php fx_template( 'views/global/search' ); ?>
+
 					<div class="block hamburger lg:hidden">
 
-						<div class="inline-flex items-center py-3 pl-3 text-gray-900 transition-all duration-200 ease-out cursor-pointer hover:text-gray-500 mobile-trigger">
+						<div class="inline-flex items-center py-3 pl-3 text-gray-600 cursor-pointer transition-fx hover:text-gray-500 mobile-trigger">
 
 							<span class="mt-0.5 m-open"><?php fx_icon( 'menu-icon' ); ?></span>
 

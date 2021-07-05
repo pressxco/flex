@@ -14,20 +14,27 @@
 
 <div id="welcome">
 
-	<div class="max-w-5xl px-8 py-10 mx-auto divide-y divide-gray-200 lg:px-6">
+	<div class="container px-4 py-10 mx-auto lg:px-6">
 
-		<?php fx_template( 'views/home/title' ); ?>
+		<div class="grid grid-cols-3 gap-7">
 
-		<?php
-			fx_template(
-				'views/blog/post-loop',
-				array(
-					'nopaging'       => false,
-					'posts_per_page' => 10,
-					'paged'          => $paged,
-				)
-			);
-			?>
+			<div class="col-span-3 md:col-span-2">
+
+				<div class="post-loop space-y-7">
+
+					<?php fx_template( 'views/blog/post-loop'); ?>
+
+				</div>
+
+			</div>
+
+			<div class="col-span-3 md:col-span-1">
+
+				<?php get_sidebar(); ?>
+
+			</div>
+
+		</div>
 
 	</div>
 

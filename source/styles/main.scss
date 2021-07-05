@@ -10,6 +10,14 @@ Version: 1.0.0
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer components {
+	.transition-fx {
+		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 250ms;
+	}
+}
+
 // Setting variables and mixins
 @import "global/_animations";
 @import "global/_wp";
@@ -18,7 +26,10 @@ Version: 1.0.0
 @import "global/_breadcrumbs";
 @import "global/_comments";
 @import "global/_moby";
+@import "global/_fonts";
+@import "global/_widgets";
 @import "global/_post";
+@import "global/_pagination";
 @import "global/_theme";
 @import "global/_footer";
 

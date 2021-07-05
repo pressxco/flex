@@ -109,6 +109,7 @@ module.exports = {
         },
       }),
       fontSize: {
+        'xsmd': '.8125rem',
         'nav': '.90625rem',
       },
       maxWidth: {
@@ -163,7 +164,8 @@ module.exports = {
     },
   },
   plugins: [
-    //require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
     function ({ addComponents }) {
       addComponents({
         '.container': {
@@ -178,7 +180,7 @@ module.exports = {
             maxWidth: '1140px',
           },
           '@screen xl': {
-            maxWidth: '1320px',
+            maxWidth: '1140px',
           },
         }
       })

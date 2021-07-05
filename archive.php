@@ -14,35 +14,40 @@
 $query_term       = get_queried_object();
 $archive_taxonomy = $query_term->taxonomy;
 $archive_name     = $query_term->name;
-
 ?>
 
 <?php get_header(); ?>
 
-	<div class="max-w-5xl px-8 py-10 mx-auto divide-y divide-gray-200 lg:px-6">
+	<div id="archive" class="container px-8 pb-10 mx-auto lg:px-6">
 
-		<?php fx_template( 'views/home/title' ); ?>
+		<div class="archive-title">
 
 		<?php
-			fx_template(
-				'views/blog/post-loop',
-				array(
-					'nopaging'       => false,
-					'posts_per_page' => 10,
-					'paged'          => $paged,
-					'tax_query'      => array( // (array) - use taxonomy parameters (available with Version 3.1).
-						'relation' => ' and ', // (string) - The logical relationship between each inner taxonomy array when there is more than one. Possible values are ' and ', ' or '. Do not use with a single inner taxonomy array. Default value is ' and '.
-						array(
-							'taxonomy'         => $query_term->taxonomy, // (string) - Taxonomy.
-							'terms'            => $query_term->term_id,
-							'field'            => 'id', // (string) - Select taxonomy term by Possible values are 'term_id', 'name', 'slug' or 'term_taxonomy_id'. Default value is 'term_id'.
-							'include_children' => true, // (bool) - Whether or not to include children for hierarchical taxonomies. Defaults to true.
-							'operator'         => 'IN', // (string) - Operator to test. Possible values are 'IN', 'NOT IN', ' and ', 'EXISTS' and 'NOT EXISTS'. Default value is 'IN'.
-						),
-					),
-				)
-			);
-			?>
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		?>
+
+		</div>
+
+		<div class="grid grid-cols-3 gap-7">
+
+			<div class="col-span-3 md:col-span-2">
+
+				<div class="post-loop space-y-7">
+
+					<?php fx_template( 'views/blog/post-loop' ); ?>
+
+				</div>
+
+			</div>
+
+			<div class="col-span-3 md:col-span-1">
+
+				<?php get_sidebar(); ?>
+
+			</div>
+
+		</div>
 
 	</div>
 

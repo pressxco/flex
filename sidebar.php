@@ -11,8 +11,8 @@
 
 ?>
 
-<div class="sidebar">
+<div class="space-y-7 sidebar">
 
-	<?php dynamic_sidebar(); ?>
+	<?php dynamic_sidebar( 'primary' ); ?>
 
 </div>

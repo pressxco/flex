@@ -14,9 +14,7 @@ $view_params = array(
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php fx_post_thumbnail(); ?>
-
-		<div class="post-heading">
+		<div class="post-heading single">
 
 			<div class="post-category">
 
@@ -24,9 +22,9 @@ $view_params = array(
 
 			</div>
 
-			<h2 class="post-title">
+			<h2 class="post-title single">
 
-				<a class="flex items-center w-full text-gray-800 break-all truncate" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
+				<a class="flex items-center text-gray-800" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
 
 					<?php if ( is_sticky() ) : ?>
 
@@ -42,27 +40,9 @@ $view_params = array(
 
 		</div>
 
-		<div class="w-full px-10 pt-4 space-y-4 overflow-hidden">
+		<?php if ( ! is_page() ) : ?>
 
-			<div class="post-content">
-
-				<?php wp_kses_post( the_content() ); ?>
-
-			</div>
-
-			<div class="read-more">
-
-				<a class="text-blue-600 transition-fx hover:text-blue-500" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
-
-					<?php esc_html_e( 'Read more →', 'flex' ); ?>
-
-				</a>
-
-			</div>
-
-		</div>
-
-		<div class="post-footer">
+		<div class="post-footer single">
 
 			<span class="post-data post-author">
 
@@ -72,7 +52,7 @@ $view_params = array(
 
 			<span class="post-data post-comments">
 
-				<a href="<?php echo esc_url( $view_params['post_link'] ); ?>#comments"><?php echo __( 'Comments ', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
+				<a href="<?php echo esc_url( $view_params['post_link'] ); ?>#comments"><?php echo __( 'Comments', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
 
 			</span>
 
@@ -81,6 +61,34 @@ $view_params = array(
 				<?php fx_posted_on(); ?>
 
 			</span>
+
+		</div>
+
+		<?php endif; ?>
+
+		<?php fx_post_thumbnail(); ?>
+
+		<div class="w-full px-6 py-8 space-y-4 overflow-hidden sm:px-10">
+
+			<div class="prose post-content single ">
+
+				<?php wp_kses_post( the_content() ); ?>
+
+				<?php wp_link_pages(); ?>
+
+				<?php fx_entry_footer(); ?>
+
+			</div>
+
+		</div>
+
+		<div class="mt-10 page-comments">
+
+			<?php wp_list_comments(); ?>
+
+			<?php comments_template(); ?>
+
+			<?php the_comments_navigation(); ?>
 
 		</div>
 

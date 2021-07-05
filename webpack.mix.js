@@ -8,7 +8,15 @@ mix.setPublicPath(path.resolve('./'));
 
 mix.sass('source/styles/main.scss', 'dist/styles');
 
-mix.combine(['source/scripts/moby.js', 'source/scripts/bundle.js'], 'dist/scripts/bundle.js');
+mix.combine(
+  [
+    'source/scripts/plugins/moby.js', 
+    'source/scripts/plugins/lazysizes.js', 
+    'source/scripts/plugins/scrollpup.js',
+    'source/scripts/bundle.js'
+  ], 
+  'dist/scripts/bundle.js'
+);
 
 mix.options({
   processCssUrls: false,

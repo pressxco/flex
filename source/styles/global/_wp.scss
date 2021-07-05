@@ -34,6 +34,7 @@ img.aligncenter {
 	margin-bottom: 1.5em;
 	text-align: center;
 	padding-top: 5px;
+	max-width: 100% !important;
 }
 
 .wp-caption img {
@@ -43,8 +44,8 @@ img.aligncenter {
 }
 
 .wp-caption p.wp-caption-text {
-	line-height: 1.5;
-	font-size: 10px;
+	display: flex;
+	font-size: 12px;
 	margin: 0;
 }
 
@@ -69,69 +70,90 @@ blockquote.right {
 	float: right;
 }
 
-.gallery dl {}
+.gallery dl {
+}
 
-.gallery dt {}
+.gallery dt {
+}
 
-.gallery dd {}
+.gallery dd {
+}
 
-.gallery dl a {}
+.gallery dl a {
+}
 
-.gallery dl img {}
+.gallery dl img {
+}
 
-.gallery-caption { display: none; }
+.gallery-caption {
+	display: none;
+}
 
-.size-full {}
+.size-full {
+}
 
-.size-large {}
+.size-large {
+}
 
-.size-medium {}
+.size-medium {
+}
 
-.size-thumbnail {}
-
+.size-thumbnail {
+}
 
 /* =============================================================================
    WordPress CSS - Miscellaneous Styles
    ========================================================================== */
 
 /* ==|== category links ===================================================== */
-li.categories {}
+li.categories {
+}
 
-li.cat-item {}
+li.cat-item {
+}
 
-li.current-cat {}
+li.current-cat {
+}
 
-li.current-cat-parent {}
+li.current-cat-parent {
+}
 
-ul.children {}
-
+ul.children {
+}
 
 /* ==|== blogroll links ===================================================== */
-.linkcat {}
+.linkcat {
+}
 
-.blogroll {}
+.blogroll {
+}
 
 /* ==|== readmore links ===================================================== */
-.more-link {}
-
+.more-link {
+}
 
 /* =============================================================================
    WP CSS - Page Listings
    ========================================================================== */
 
-.pagenav {}
+.pagenav {
+}
 
 /* outermost list item */
-.page_item {}
+.page_item {
+}
 
 /* specific page id */
-.current_page_item {}
+.current_page_item {
+}
 
 /* current page */
-.current_page_parent {}
+.current_page_parent {
+}
 
 /* parent of current page */
-.current_page_ancestor {}
+.current_page_ancestor {
+}
 
 /* any ancestor of current page */
 
@@ -141,336 +163,481 @@ ul.children {}
 .pagenav .current_page_ancestor .current_page_item ul,
 .pagenav .current_page_ancestor .current_page_ancestor ul,
 .pagenav .current_page_ancestor .current_page_ancestor .current_page_item ul,
-.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul {}
+.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul {
+}
 
 .pagenav ul ul,
 .pagenav .current_page_item ul ul,
 .pagenav .current_page_ancestor ul ul,
 .pagenav .current_page_ancestor .current_page_item ul ul,
-.pagenav .current_page_ancestor .current_page_ancestor ul ul {}
+.pagenav .current_page_ancestor .current_page_ancestor ul ul {
+}
 
 .pagenav .current_page_ancestor .current_page_ancestor .current_page_item ul ul,
-.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul ul {}
-
+.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul ul {
+}
 
 /* =============================================================================
    WordPress CSS - Default WordPress Widgets
    ========================================================================== */
 
-.widget {}
+.widget {
+}
 
 /* ==|== links widget ======================================================= */
-.widget_links {}
+.widget_links {
+}
 
-.widget_links ul {}
+.widget_links ul {
+}
 
-.widget_links ul li {}
+.widget_links ul li {
+}
 
-.widget_links ul li a {}
+.widget_links ul li a {
+}
 
 /* ==|== meta widget ======================================================== */
-.widget_meta {}
+.widget_meta {
+}
 
-.widget_meta ul {}
+.widget_meta ul {
+}
 
-.widget_meta ul li {}
+.widget_meta ul li {
+}
 
-.widget_meta ul li a {}
+.widget_meta ul li a {
+}
 
 /* ==|== pages widget ======================================================= */
-.widget_pages {}
+.widget_pages {
+}
 
-.widget_pages ul {}
+.widget_pages ul {
+}
 
-.widget_pages ul li {}
+.widget_pages ul li {
+}
 
-.widget_pages ul li a {}
+.widget_pages ul li a {
+}
 
 /* ==|== recent-posts widget ================================================ */
-.widget_recent_entries {}
+.widget_recent_entries {
+}
 
-.widget_recent_entries ul {}
+.widget_recent_entries ul {
+}
 
-.widget_recent_entries ul li {}
+.widget_recent_entries ul li {
+}
 
-.widget_recent_entries ul li a {}
+.widget_recent_entries ul li a {
+}
 
 /* ==|== archives widget ==================================================== */
-.widget_archive {}
+.widget_archive {
+}
 
-.widget_archive ul {}
+.widget_archive ul {
+}
 
-.widget_archive ul li {}
+.widget_archive ul li {
+}
 
-.widget_archive ul li a {}
+.widget_archive ul li a {
+}
 
-.widget_archive select {}
+.widget_archive select {
+}
 
-.widget_archive option {}
+.widget_archive option {
+}
 
 /* ==|== tag-cloud widget =================================================== */
-.widget_links {}
+.widget_links {
+}
 
-.widget_links li:after {}
+.widget_links li:after {
+}
 
-.widget_links li:before {}
+.widget_links li:before {
+}
 
-.widget_tag_cloud {}
+.widget_tag_cloud {
+}
 
-.widget_tag_cloud a {}
+.widget_tag_cloud a {
+}
 
-.widget_tag_cloud a:after {}
+.widget_tag_cloud a:after {
+}
 
-.widget_tag_cloud a:before {}
+.widget_tag_cloud a:before {
+}
 
 /* ==|== calendar widget ==================================================== */
-.widget_calendar {}
+.widget_calendar {
+}
 
-#calendar_wrap {}
+#calendar_wrap {
+}
 
-#calendar_wrap th {}
+#calendar_wrap th {
+}
 
-#calendar_wrap td {}
+#calendar_wrap td {
+}
 
-#wp-calendar tr td {}
+#wp-calendar tr td {
+}
 
-#wp-calendar caption {}
+#wp-calendar caption {
+}
 
-#wp-calendar a {}
+#wp-calendar a {
+}
 
-#wp-calendar #today {}
+#wp-calendar #today {
+}
 
-#wp-calendar #prev {}
+#wp-calendar #prev {
+}
 
-#wp-calendar #next {}
+#wp-calendar #next {
+}
 
-#wp-calendar #next a {}
+#wp-calendar #next a {
+}
 
-#wp-calendar #prev a {}
+#wp-calendar #prev a {
+}
 
 /* ==|== category widget ==================================================== */
-.widget_categories {}
+.widget_categories {
+}
 
-.widget_categories ul {}
+.widget_categories ul {
+}
 
-.widget_categories ul li {}
+.widget_categories ul li {
+}
 
-.widget_categories ul ul.children {}
+.widget_categories ul ul.children {
+}
 
-.widget_categories a {}
+.widget_categories a {
+}
 
-.widget_categories select {}
+.widget_categories select {
+}
 
-.widget_categories select#cat {}
+.widget_categories select#cat {
+}
 
-.widget_categories select.postform {}
+.widget_categories select.postform {
+}
 
-.widget_categories option {}
+.widget_categories option {
+}
 
-.widget_categories .level-0 {}
+.widget_categories .level-0 {
+}
 
-.widget_categories .level-1 {}
+.widget_categories .level-1 {
+}
 
-.widget_categories .level-2 {}
+.widget_categories .level-2 {
+}
 
-.widget_categories .level-3 {}
+.widget_categories .level-3 {
+}
 
 /* ==|== recent-commments widget ============================================ */
-.recentcomments {}
+.recentcomments {
+}
 
-#recentcomments {}
+#recentcomments {
+}
 
-#recentcomments li {}
+#recentcomments li {
+}
 
-#recentcomments li a {}
+#recentcomments li a {
+}
 
-.widget_recent_comments {}
+.widget_recent_comments {
+}
 
 /* ==|== search widget ====================================================== */
-#searchform {}
+#searchform {
+}
 
-.widget_search {}
+.widget_search {
+}
 
-.screen-reader-text { display: none; }
+.screen-reader-text {
+	display: none;
+}
 
 /* ==|== text widget ======================================================== */
-.textwidget {}
+.textwidget {
+}
 
-.widget_text {}
+.widget_text {
+}
 
-.textwidget p {}
-
+.textwidget p {
+}
 
 /* =============================================================================
    WP CSS - Comment Styles
    ========================================================================== */
 
-.commentlist .reply {}
+.commentlist .reply {
+}
 
-.commentlist .reply a {}
+.commentlist .reply a {
+}
 
-.commentlist .alt {}
+.commentlist .alt {
+}
 
-.commentlist .odd {}
+.commentlist .odd {
+}
 
-.commentlist .even {}
+.commentlist .even {
+}
 
-.commentlist .thread-alt {}
+.commentlist .thread-alt {
+}
 
-.commentlist .thread-odd {}
+.commentlist .thread-odd {
+}
 
-.commentlist .thread-even {}
+.commentlist .thread-even {
+}
 
-.commentlist li ul.children .alt {}
+.commentlist li ul.children .alt {
+}
 
-.commentlist li ul.children .odd {}
+.commentlist li ul.children .odd {
+}
 
-.commentlist li ul.children .even {}
+.commentlist li ul.children .even {
+}
 
-.commentlist .vcard {}
+.commentlist .vcard {
+}
 
-.commentlist .vcard cite.fn {}
+.commentlist .vcard cite.fn {
+}
 
-.commentlist .vcard span.says {}
+.commentlist .vcard span.says {
+}
 
-.commentlist .vcard img.photo {}
+.commentlist .vcard img.photo {
+}
 
-.commentlist .vcard img.avatar {}
+.commentlist .vcard img.avatar {
+}
 
-.commentlist .vcard cite.fn a.url {}
+.commentlist .vcard cite.fn a.url {
+}
 
-.commentlist .comment-meta {}
+.commentlist .comment-meta {
+}
 
-.commentlist .comment-meta a {}
+.commentlist .comment-meta a {
+}
 
-.commentlist .commentmetadata {}
+.commentlist .commentmetadata {
+}
 
-.commentlist .commentmetadata a {}
+.commentlist .commentmetadata a {
+}
 
-.commentlist .parent {}
+.commentlist .parent {
+}
 
-.commentlist .comment {}
+.commentlist .comment {
+}
 
-.commentlist .children {}
+.commentlist .children {
+}
 
-.commentlist .pingback {}
+.commentlist .pingback {
+}
 
-.commentlist .bypostauthor { display: block; }
+.commentlist .bypostauthor {
+	display: block;
+}
 
-.commentlist .comment-author {}
+.commentlist .comment-author {
+}
 
-.commentlist .comment-author-admin {}
+.commentlist .comment-author-admin {
+}
 
-.commentlist {}
+.commentlist {
+}
 
-.commentlist li {}
+.commentlist li {
+}
 
-.commentlist li p {}
+.commentlist li p {
+}
 
-.commentlist li ul {}
+.commentlist li ul {
+}
 
-.commentlist li ul.children li {}
+.commentlist li ul.children li {
+}
 
-.commentlist li ul.children li.alt {}
+.commentlist li ul.children li.alt {
+}
 
-.commentlist li ul.children li.byuser {}
+.commentlist li ul.children li.byuser {
+}
 
-.commentlist li ul.children li.comment {}
+.commentlist li ul.children li.comment {
+}
 
-.commentlist li ul.children li.bypostauthor {}
+.commentlist li ul.children li.bypostauthor {
+}
 
-.commentlist li ul.children li.comment-author-admin {}
+.commentlist li ul.children li.comment-author-admin {
+}
 
-#cancel-comment-reply {}
+#cancel-comment-reply {
+}
 
-#cancel-comment-reply a {}
-
+#cancel-comment-reply a {
+}
 
 /* =============================================================================
    WP CSS - body_class()
    ========================================================================== */
 
-.rtl {}
+.rtl {
+}
 
-.home {}
+.home {
+}
 
-.blog {}
+.blog {
+}
 
-.archive {}
+.archive {
+}
 
-.date {}
+.date {
+}
 
-.search {}
+.search {
+}
 
-.paged {}
+.paged {
+}
 
-.attachment {}
+.attachment {
+}
 
-.error404 {}
+.error404 {
+}
 
-.single
+.single .author {
+}
 
-.author {}
+.category {
+}
 
-.category {}
+.tag {
+}
 
-.tag {}
+.tag {
+}
 
-.tag {}
+.page-parent {
+}
 
-.page-parent {}
+.page-child {
+}
 
-.page-child{}
+.page-template {
+}
 
-.page-template {}
+.search-results {
+}
 
-.search-results {}
+.search-no-results {
+}
 
-.search-no-results {}
-
-.logged-in {}
-
+.logged-in {
+}
 
 /* =============================================================================
    WP CSS - post_class()
    ========================================================================== */
 
-.post-id {}
+.post-id {
+}
 
-.post {}
+.post {
+}
 
-.page {}
+.page {
+}
 
-.attachment {}
+.attachment {
+}
 
-.sticky { position: sticky; }
+.sticky {
+	position: sticky;
+}
 
-.hentry {}
+.hentry {
+}
 
-.category-misc {}
+.category-misc {
+}
 
-.category-example {}
+.category-example {
+}
 
-.tag-news {}
+.tag-news {
+}
 
-.tag-wordpress {}
+.tag-wordpress {
+}
 
-.tag-markup {}
+.tag-markup {
+}
 
-.format-aside {}
+.format-aside {
+}
 
-.format-gallery {}
+.format-gallery {
+}
 
-.format-link {}
+.format-link {
+}
 
-.format-image {}
+.format-image {
+}
 
-.format-quote {}
+.format-quote {
+}
 
-.format-status {}
+.format-status {
+}
 
-.format-video {}
+.format-video {
+}
 
-.format-audio {}
+.format-audio {
+}
 
-.format-chat {}
+.format-chat {
+}

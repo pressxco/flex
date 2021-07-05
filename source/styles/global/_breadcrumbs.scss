@@ -3,14 +3,14 @@
 ========================================================================== */
 
 .breadcrumbs {
-	@apply flex;
+	@apply flex mb-1.5;
 
 	.trail-items {
 		li {
-			@apply inline-flex text-gray-700 text-sm font-medium;
+			@apply inline-flex text-gray-500 text-xsmd font-medium;
 
 			a {
-				@apply text-gray-700 hover:text-gray-500 ease-out transition duration-200;
+				@apply text-gray-500 hover:text-gray-900 transition-fx;
 			}
 
 			&:before {
@@ -26,7 +26,7 @@
 
 			&.trail-end {
 				span {
-					@apply text-gray-500;
+					@apply text-gray-400;
 				}
 			}
 		}

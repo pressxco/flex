@@ -15,7 +15,7 @@ header#primary {
 ========================================================================== */
 
 nav.primary {
-	@apply ml-auto px-8 list-none bg-white hidden lg:block lg:p-0 lg:relative text-gray-600;
+	@apply ml-auto px-8 list-none bg-white hidden lg:block lg:p-0 lg:relative text-gray-700;
 
 	.primary-menu {
 		@apply m-0;
@@ -25,18 +25,25 @@ nav.primary {
 		Navigation Items
 	========================================================================== */
 
-	.nav-item {
-		@apply py-2 inline-flex relative font-medium text-nav;
-
-		&.btn-nav {
-			@apply bg-blue-700 border-2 border-transparent text-sm text-white rounded font-bold px-1 ml-3 hover:bg-white hover:border-blue-700 hover:text-blue-700 transition duration-300 ease-out;
-		}
+	.menu-item {
+		@apply py-4 inline-flex relative font-medium text-sm;
 
 		& > a {
-			@apply px-3 inline-flex w-auto hover:text-blue-700 transition-all duration-300 ease-out items-center;
+			@apply px-3 inline-flex w-auto hover:text-blue-700 transition-fx items-center;
 
 			span.chevron {
 				@apply ml-1 mt-0.5;
+			}
+		}
+
+		&.menu-item-has-children {
+			& > a {
+				&:after {
+					font-family: "fx-icons" !important;
+					content: "\e908";
+					display: flex;
+					@apply mt-0.5 text-base;
+				}
 			}
 		}
 
@@ -52,16 +59,23 @@ nav.primary {
 	========================================================================== */
 
 	.sub-menu {
-		@apply m-0 mt-2 bg-white border border-gray-200 rounded absolute w-48 top-full pl-0 -ml-2 py-2.5 invisible opacity-0 transition-all duration-200 ease-out z-50;
+		@apply m-0 bg-white border border-gray-200 rounded absolute w-48 top-full pl-0 -ml-2 py-2.5 invisible opacity-0 transition-all duration-200 ease-out z-50;
 
-		.sub-item {
-			@apply flex w-full relative;
+		.menu-item {
+			@apply flex w-full relative py-2;
 
 			& > a {
-				@apply flex w-full px-5 py-2 text-sm font-medium hover:text-blue-700 transition-all duration-300 ease-out items-center;
+				@apply flex w-full px-5 text-sm font-medium hover:text-blue-700 transition-all duration-300 ease-out items-center;
+			}
 
-				span.chevron {
-					@apply ml-auto;
+			&.menu-item-has-children {
+				& > a {
+					&:after {
+						font-family: "fx-icons" !important;
+						content: "\e907";
+						display: flex;
+						@apply mt-0.5 ml-auto text-base;
+					}
 				}
 			}
 

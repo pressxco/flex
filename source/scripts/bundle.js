@@ -11,18 +11,6 @@
 
   });
 
-  var menuItems = $(".primary-menu").find('li');
-
-  $.each(menuItems, function () {
-
-    if ($(this).hasClass('menu-item-has-children')) {
-
-      $(this).children('a').append('<span class="chevron"><svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L4 4L7 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg></span>');
-
-    }
-
-  });
-
   new Moby({
     menu: $('.primary-menu'), // The menu that will be cloned
     mobyTrigger: $('.mobile-trigger'), // Button that will trigger the Moby menu to open
