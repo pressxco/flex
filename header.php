@@ -51,35 +51,23 @@
 					<nav class="primary">
 
 						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'primary',
-									'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
-									'menu_class'     => 'primary-menu',
-									'fallback_cb'    => 'fx_main_menu_fallback',
-									'container'      => false,
-									'depth'          => 3,
-								)
-							);
-
-							// fx_optimized_nav( 'primary', '<ul class="%2$s">%3$s</ul>', 'primary-menu', 'fx_main_menu_fallback', 3 );
-							?>
+						wp_nav_menu(
+							array(
+								'theme_location' => 'primary',
+								'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+								'menu_class'     => 'primary-menu',
+								'fallback_cb'    => 'fx_main_menu_fallback',
+								'container'      => false,
+								'depth'          => 3,
+							)
+						);
+						?>
 
 					</nav>
 
 					<?php fx_template( 'views/global/search' ); ?>
 
-					<div class="block hamburger lg:hidden">
-
-						<div class="inline-flex items-center py-3 pl-3 text-gray-600 cursor-pointer transition-fx hover:text-gray-500 mobile-trigger">
-
-							<span class="mt-0.5 m-open"><?php fx_icon( 'menu-icon' ); ?></span>
-
-							<span class="ml-1.5 text-base font-medium mt-open"><?php esc_html_e( 'Menu', 'flex' ); ?></span>
-
-						</div>
-
-					</div>
+					<?php fx_template( 'views/global/hamburger' ); ?>
 
 				</div>
 

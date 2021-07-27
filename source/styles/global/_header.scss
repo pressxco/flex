@@ -29,7 +29,7 @@ nav.primary {
 		@apply py-4 inline-flex relative font-medium text-sm;
 
 		& > a {
-			@apply px-3 inline-flex w-auto hover:text-blue-700 transition-fx items-center;
+			@apply px-2.5 inline-flex w-auto hover:text-blue-700 transition-fx items-center;
 
 			span.chevron {
 				@apply ml-1 mt-0.5;
@@ -65,7 +65,7 @@ nav.primary {
 			@apply flex w-full relative py-2;
 
 			& > a {
-				@apply flex w-full px-5 text-sm font-medium hover:text-blue-700 transition-all duration-300 ease-out items-center;
+				@apply flex w-full px-5 text-sm font-medium hover:text-blue-700 transition-all duration-300 ease-out items-center hover:ml-0.5;
 			}
 
 			&.menu-item-has-children {

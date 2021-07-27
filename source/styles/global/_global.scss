@@ -19,7 +19,7 @@ body {
 	font-size: 15px;
 	height: 100%;
 	color: #333;
-	@apply bg-gray-100;
+	@apply bg-gray-50;
 }
 
 figure {
@@ -141,4 +141,8 @@ select {
 	p {
 		@apply mt-2;
 	}
+}
+
+img.lazyload:not([src]) {
+	visibility: hidden;
 }

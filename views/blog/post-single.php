@@ -24,7 +24,7 @@ $view_params = array(
 
 			<h2 class="post-title single">
 
-				<a class="flex items-center text-gray-800" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
+				<a class="flex items-center text-gray-800 break-all" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
 
 					<?php if ( is_sticky() ) : ?>
 
@@ -76,13 +76,17 @@ $view_params = array(
 
 				<?php wp_link_pages(); ?>
 
-				<?php fx_entry_footer(); ?>
-
 			</div>
 
 		</div>
 
-		<div class="mt-10 page-comments">
+		<div class="px-8 py-6 border-t border-gray-100 single-footer">
+
+			<?php fx_entry_footer(); ?>
+
+		</div>
+
+		<div class="page-comments">
 
 			<?php wp_list_comments(); ?>
 

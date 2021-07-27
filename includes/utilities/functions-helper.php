@@ -201,7 +201,7 @@ function fx_posted_on() {
 				),
 			)
 		),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . wp_kses_post( $time_string ) . '</a>'
+		wp_kses_post( $time_string )
 	);
 
 	echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>'; // WPCS: XSS OK.
@@ -353,12 +353,46 @@ add_filter( 'the_generator', 'fx_hide_wp_version' );
  */
 function fx_entry_footer() {
 
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'flex' ) );
+	$author_id          = get_the_author_meta( 'ID' );
+	$author_image_class = ( get_the_author_meta( 'description' ) ) ? 'mt-2' : '';
+	$categories_list    = get_the_category_list( esc_html__( ', ', 'flex' ) );
+	$tags_list          = get_the_tag_list( '', ', ' );
+
+	?>
+
+	<div class="flex space-x-4">
+
+		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-12 h-12 rounded-full <?php echo esc_html( $author_image_class ); ?>">
+
+		<dl class="text-sm font-medium whitespace-no-wrap">
+
+			<dt class="sr-only"><?php esc_html_e( 'Author Name', 'flex' ); ?></dt>
+
+			<dd class="text-lg text-gray-900"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></dd>
+
+			<?php if ( get_the_author_meta( 'description' ) ) : ?>
+
+				<dt class="sr-only"><?php esc_html_e( 'Author Description', 'flex' ); ?></dt>
+
+				<dd class="mb-2 text-base font-normal text-gray-600"><?php echo esc_html( get_the_author_meta( 'description' ) ); ?></dd>
+
+			<?php endif; ?>
+
+			<dt class="sr-only"><?php esc_html_e( 'Author Archive Link', 'flex' ); ?></dt>
+
+			<dd><a href="<?php echo esc_html( get_author_posts_url( $author_id ) ); ?>" class="text-blue-600 hover:text-blue-700 transition-fx"><?php esc_html_e( 'See all posts by this author →', 'flex' ); ?></a></dd>
+
+		</dl>
+
+	</div>
+
+	<div class="flex pt-4 mt-6 text-sm text-gray-600 border-t border-gray-100 post-categories">
+
+		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Categories: ', 'flex' ); ?></span>
+
+		<?php
 		if ( $categories_list ) {
-			echo '<span class="cat-links">';
+			echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
 			printf(
 				wp_kses(
 				/* translators: 1: list of categories. */
@@ -373,15 +407,22 @@ function fx_entry_footer() {
 			);
 			echo '</span>';
 		}
+		?>
+	</div>
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'flex' ) );
-		if ( $tags_list ) {
-			echo '<span class="tags-links">';
+	<?php if ( $tags_list ) : ?>
+
+	<div class="flex pt-4 mt-6 text-sm text-gray-600 border-t border-gray-100 post-tags">
+
+		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Tags: ', 'flex' ); ?></span>
+
+		<?php
+
+			echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
+
 			printf(
 				wp_kses(
-				/* translators: 1: list of tags. */
-					__( '<span class="screen-reader-text">Tagged </span>%1$s', 'flex' ),
+					__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -390,44 +431,14 @@ function fx_entry_footer() {
 				),
 				$tags_list
 			);
+
 			echo '</span>';
 
-		}
-	}
+		?>
+	</div>
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link(
-			sprintf(
-				wp_kses(
-				/* translators: %s: post title */
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'flex' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-		echo '</span>';
-	}
+	<?php endif; ?>
 
-	edit_post_link(
-		sprintf(
-			wp_kses(
-			/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'flex' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
+	<?php
+
 }

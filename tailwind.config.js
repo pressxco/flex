@@ -132,7 +132,7 @@ module.exports = {
         cyan: colors.cyan,
         emerald: colors.emerald,
         fuchsia: colors.fuchsia,
-        gray: colors.coolGray,
+        gray: colors.blueGray,
         green: colors.green,
         indigo: colors.indigo,
         'light-blue': colors.lightBlue,

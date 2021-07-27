@@ -26,7 +26,7 @@ $view_params = array(
 
 			<h2 class="post-title">
 
-				<a class="flex items-center w-full text-gray-800 break-all truncate" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
+				<a class="flex items-center text-gray-800 break-all" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
 
 					<?php if ( is_sticky() ) : ?>
 

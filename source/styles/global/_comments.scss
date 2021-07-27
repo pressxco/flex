@@ -7,7 +7,7 @@
 }
 
 .comments-title {
-	@apply text-xl tracking-tight;
+	@apply text-xl tracking-tight w-full break-all;
 }
 
 .comments-header {
@@ -28,10 +28,15 @@
 	px-6
 	py-6
 	my-6
-	text-gray-600;
+	text-gray-600
+	overflow-hidden
+	w-full
+	break-all;
 
 	p {
-		@apply text-gray-700;
+		@apply text-gray-700 overflow-hidden
+		w-full
+		break-all;
 	}
 }
 

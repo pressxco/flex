@@ -3,7 +3,7 @@
 ========================================================================== */
 
 .breadcrumbs {
-	@apply flex mb-1.5;
+	@apply flex mb-1.5 w-full truncate overflow-hidden;
 
 	.trail-items {
 		li {

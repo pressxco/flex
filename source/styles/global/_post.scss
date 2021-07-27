@@ -16,7 +16,7 @@
 }
 
 .post-title {
-	@apply w-full mt-0 overflow-hidden text-2xl font-bold tracking-tight truncate block;
+	@apply w-full mt-0 overflow-hidden text-2xl font-bold tracking-tight block;
 
 	&.single {
 		@apply text-2xl lg:text-3xl;
@@ -37,7 +37,7 @@
 	}
 
 	&.single {
-		@apply line-clamp-none overflow-auto;
+		@apply line-clamp-none overflow-auto break-all;
 	}
 }
 
