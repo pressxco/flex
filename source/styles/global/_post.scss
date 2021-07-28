@@ -15,6 +15,10 @@
 	}
 }
 
+.page-heading {
+	@apply px-6 sm:px-10 py-6 space-y-2.5 border-gray-100 border-b;
+}
+
 .post-title {
 	@apply w-full mt-0 overflow-hidden text-2xl font-bold tracking-tight block;
 

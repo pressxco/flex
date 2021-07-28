@@ -327,6 +327,8 @@ function fx_entry_footer() {
 
 	?>
 
+	<?php if ( ! is_page() ) : ?>
+
 	<div class="flex space-x-4">
 
 		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-12 h-12 rounded-full <?php echo esc_html( $author_image_class ); ?>">
@@ -353,59 +355,65 @@ function fx_entry_footer() {
 
 	</div>
 
+		<?php if ( $categories_list ) : ?>
+
 	<div class="flex pt-4 mt-4 text-sm text-gray-600 border-t border-gray-100 post-categories">
 
 		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Categories: ', 'flex' ); ?></span>
 
-		<?php
-		if ( $categories_list ) {
-			echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
-			printf(
-				wp_kses(
-				/* translators: 1: list of categories. */
-					__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				$categories_list
-			);
-			echo '</span>';
-		}
-		?>
-	</div>
-
-	<?php if ( $tags_list ) : ?>
-
-	<div class="flex pt-4 mt-4 text-sm text-gray-600 border-t border-gray-100 post-tags">
-
-		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Tags: ', 'flex' ); ?></span>
-
-		<?php
-
-			echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
-
-			printf(
-				wp_kses(
-					__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				$tags_list
-			);
-
-			echo '</span>';
-
-		?>
+			<?php
+			if ( $categories_list ) {
+				echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
+				printf(
+					wp_kses(
+					/* translators: 1: list of categories. */
+						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					$categories_list
+				);
+				echo '</span>';
+			}
+			?>
 	</div>
 
 	<?php endif; ?>
 
-	<?php
+		<?php if ( $tags_list ) : ?>
+
+		<div class="flex pt-4 mt-4 text-sm text-gray-600 border-t border-gray-100 post-tags">
+
+			<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Tags: ', 'flex' ); ?></span>
+
+				<?php
+
+				echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
+
+				printf(
+					wp_kses(
+						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					),
+					$tags_list
+				);
+
+				echo '</span>';
+
+				?>
+		</div>
+
+	<?php endif; ?>
+
+	<?php endif; ?>
+
+		<?php
 
 }

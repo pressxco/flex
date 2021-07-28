@@ -8,13 +8,14 @@ $view_params = array(
 	'post_day'     => get_the_date( 'd' ),
 	'post_month'   => get_the_time( 'm' ),
 	'post_year'    => get_the_time( 'Y' ),
+	'post_type'    => ( is_page() ) ? 'page' : 'post',
 );
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<div class="post-heading single">
+		<div class="<?php echo esc_attr( $view_params['post_type'] ); ?>-heading single">
 
 			<div class="post-category">
 
@@ -70,7 +71,7 @@ $view_params = array(
 
 		<div class="w-full px-6 py-8 space-y-4 overflow-hidden sm:px-10">
 
-			<div class="prose post-content single ">
+			<div class="post-content single ">
 
 				<?php wp_kses_post( the_content() ); ?>
 
@@ -80,11 +81,17 @@ $view_params = array(
 
 		</div>
 
+		<?php if ( ! is_page() ) : ?>
+
 		<div class="px-8 py-6 border-t border-gray-100 single-footer">
 
 			<?php fx_entry_footer(); ?>
 
 		</div>
+
+		<?php endif; ?>
+
+		<?php if ( comments_open() ) : ?>
 
 		<div class="page-comments">
 
@@ -96,4 +103,5 @@ $view_params = array(
 
 		</div>
 
+		<?php endif; ?>
 </article>
