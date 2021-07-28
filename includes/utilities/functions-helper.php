@@ -327,8 +327,6 @@ function fx_entry_footer() {
 
 	?>
 
-	<?php if ( ! is_page() ) : ?>
-
 	<div class="flex space-x-4">
 
 		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-12 h-12 rounded-full <?php echo esc_html( $author_image_class ); ?>">
@@ -409,8 +407,6 @@ function fx_entry_footer() {
 
 				?>
 		</div>
-
-	<?php endif; ?>
 
 	<?php endif; ?>
 
