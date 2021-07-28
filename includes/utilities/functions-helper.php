@@ -290,39 +290,6 @@ function fx_pingback_header() {
 add_action( 'wp_head', 'fx_pingback_header' );
 
 
-/**
- * Asset Optimization
- *
- * @return void
- */
-function fx_asset_optimization() {
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_action( 'admin_print_styles', 'print_emoji_styles' );
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-
-	add_filter( 'emoji_svg_url', '__return_false' );
-
-	remove_action( 'wp_head', 'wp_print_scripts' );
-	remove_action( 'wp_head', 'wp_print_head_scripts', 9 );
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'wp_head', 'wlwmanifest_link' );
-	remove_action( 'wp_head', 'rsd_link' );
-
-	add_filter( 'xmlrpc_enabled', '__return_false' );
-	add_filter( 'pings_open', '__return_false', 9999 );
-
-	add_action( 'wp_footer', 'wp_print_scripts', 5 );
-	add_action( 'wp_footer', 'wp_print_head_scripts', 5 );
-
-}
-
-add_action( 'init', 'fx_asset_optimization' );
-
-
 function fx_remove_jquery_migrate( &$scripts ) {
 
 	if ( ! is_admin() ) {
@@ -386,7 +353,7 @@ function fx_entry_footer() {
 
 	</div>
 
-	<div class="flex pt-4 mt-6 text-sm text-gray-600 border-t border-gray-100 post-categories">
+	<div class="flex pt-4 mt-4 text-sm text-gray-600 border-t border-gray-100 post-categories">
 
 		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Categories: ', 'flex' ); ?></span>
 
@@ -412,7 +379,7 @@ function fx_entry_footer() {
 
 	<?php if ( $tags_list ) : ?>
 
-	<div class="flex pt-4 mt-6 text-sm text-gray-600 border-t border-gray-100 post-tags">
+	<div class="flex pt-4 mt-4 text-sm text-gray-600 border-t border-gray-100 post-tags">
 
 		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Tags: ', 'flex' ); ?></span>
 

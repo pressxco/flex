@@ -148,13 +148,20 @@
 
 .comment-list {
 	@apply border-b border-gray-100 mb-7 pb-5;
+
+	#respond {
+		&.comment-respond {
+			@apply border-t border-gray-100 pt-3 mt-8;
+		}
+	}
 }
 
 .comments-inner p {
 	@apply text-gray-900;
 }
 
-.reply {
+.reply,
+#cancel-comment-reply-link {
 	@apply inline-flex
 	px-3
 	py-1
@@ -167,6 +174,10 @@
 	hover:bg-blue-700
 	hover:text-white
 	transition-fx;
+}
+
+#cancel-comment-reply-link {
+	@apply ml-2 mt-0 float-right;
 }
 
 .says {
