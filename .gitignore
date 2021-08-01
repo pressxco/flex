@@ -1,19 +1,9 @@
-# Apache
-.htaccess
-.htpasswd
+# Dev Packages
+/node_modules
+/vendor
 
-# WordPress
-wp-config.php
-
-# Node.js
-node_modules/
-
-# Logfiles and tempfiles
-/log/*
-!/log/.keep
-/tmp
-*.log
-assets/dist/css/main.css.map
+# Output files
+/dist
 
 # Other unneeded files
 doc/
@@ -23,5 +13,3 @@ doc/
 .DS_Store
 .idea
 .secret
-package-lock.json
-/vendor
