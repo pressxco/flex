@@ -1,6 +1,7 @@
 # Dev Packages
 /node_modules
 /vendor
+mix-manifest.json
 
 # Output files
 /dist
