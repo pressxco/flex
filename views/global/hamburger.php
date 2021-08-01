@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying Hamburger Menu.
+ *
+ * @package flex
+ * @author pressx
+ * @since 1.0.0
+ */
+
+?>
+
 <div class="block hamburger lg:hidden">
 
 	<div class="inline-flex items-center py-3 pl-3 text-gray-600 cursor-pointer transition-fx hover:text-gray-500 mobile-trigger">

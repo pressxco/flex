@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying Search Title.
+ *
+ * @package flex
+ * @author pressx
+ * @since 1.0.0
+ */
 
 $classes = ( $args ) ? $args : '';
 
@@ -10,7 +17,7 @@ $classes = ( $args ) ? $args : '';
 
 			<h1 class="text-3xl font-bold text-gray-800 tracking-tight sm:text-4xl md:text-[2rem] md:leading-[2rem]">
 
-				<?php printf( __( 'Search Results for: %s', 'flex' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( esc_html__( 'Search Results for: %s', 'flex' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
 
 			</h1>
 
@@ -18,7 +25,7 @@ $classes = ( $args ) ? $args : '';
 
 			<h1 class="text-3xl font-bold text-gray-800 tracking-tight sm:text-4xl md:text-[2rem] md:leading-[2rem]">
 
-				<?php _e( 'Nothing Found', 'flex' ); ?>
+				<?php esc_html_e( 'Nothing Found', 'flex' ); ?>
 
 			</h1>
 

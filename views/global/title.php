@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying Title
+ *
+ * @package flex
+ * @author pressx
+ * @since 1.0.0
+ */
 
 $classes = ( $args ) ? $args : '';
 

@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying Post Single.
+ *
+ * @package flex
+ * @author pressx
+ * @since 1.0.0
+ */
 
 $view_params = array(
 	'post_title'   => get_the_title(),
@@ -53,7 +60,7 @@ $view_params = array(
 
 			<span class="post-data post-comments">
 
-				<a href="<?php echo esc_url( $view_params['post_link'] ); ?>#comments"><?php echo __( 'Comments', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
+				<a href="<?php echo esc_url( $view_params['post_link'] ); ?>#comments"><?php esc_html_e( 'Comments', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
 
 			</span>
 
