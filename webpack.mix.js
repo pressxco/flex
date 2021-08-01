@@ -10,11 +10,11 @@ mix.sass('source/styles/main.scss', 'dist/styles');
 
 mix.combine(
   [
-    'source/scripts/plugins/moby.js', 
-    'source/scripts/plugins/lazysizes.js', 
+    'source/scripts/plugins/moby.js',
+    'source/scripts/plugins/lazysizes.js',
     'source/scripts/plugins/scrollpup.js',
     'source/scripts/bundle.js'
-  ], 
+  ],
   'dist/scripts/bundle.js'
 );
 
@@ -51,9 +51,9 @@ mix.webpackConfig({
 mix.disableNotifications();
 
 mix.browserSync({
-  proxy: 'http://atakanoz.local',
+  proxy: 'http://localhost:8888',
   open: 'external',
-  port: 8000,
+  port: 3000,
   files: ["dist/**/*.php", "*.php", "**/*.php", "source/**/**/*"]
 });
 

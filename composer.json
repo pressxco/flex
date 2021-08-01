@@ -1,13 +1,29 @@
 {
-    "name": "pressx/flex",
-    "type": "project",
-    "authors": [
-        {
-            "name": "PressX",
-            "email": "info@pressx.co"
-        }
+  "name": "pressx/flex",
+  "description": "Flex is the simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.",
+  "type": "project",
+  "authors": [
+      {
+          "name": "PressX",
+          "email": "info@pressx.co"
+      }
+  ],
+  "require": {
+    "htmlburger/carbon-fields": "^3.3"
+  },
+  "require-dev": {
+      "wp-coding-standards/wpcs": "^2.3"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+      "phpcs --config-set default_standard WordPress"
     ],
-    "require": {
-        "htmlburger/carbon-fields": "^3.3"
-    }
+    "test": [
+      "phpcs --ignore=./vendor ./"
+    ],
+    "fix": [
+      "phpcbf --ignore=./vendor ./"
+    ]
+  }
 }
