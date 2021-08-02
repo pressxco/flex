@@ -114,12 +114,14 @@ function fx_styles_and_scripts() {
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/dist/scripts/bundle.js', array( 'jquery' ), false, true );
 
 	// Comment Reply.
-if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 
-	wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'comment-reply' );
+
+	}
 
 }
-
+add_action( 'wp_enqueue_scripts', 'fx_styles_and_scripts' );
 
 /**
  * FX Menu

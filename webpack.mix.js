@@ -35,6 +35,7 @@ mix.webpackConfig({
       patterns: [
         { from: "source/images", to: "dist/images" },
         { from: "source/icons", to: "dist/icons" },
+        { from: "source/fonts", to: "dist/fonts" },
       ],
     }),
     new ImageminPlugin({
