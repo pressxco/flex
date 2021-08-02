@@ -1,4 +1,6 @@
-# [Flex Tailwind](https://github.com/pressxco/flex) 
+![Flex logo](https://pressx.co/flex/flex-logo.svg)
+
+# Flex WordPress Theme
 [![GitHub release](https://img.shields.io/github/v/release/pressxco/flex?color=ed64a6)](https://github.com/pressxco/flex/releases) [![license](https://img.shields.io/badge/license-GPL--2.0%2B-orange)](https://github.com/pressxco/flex/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/pressxco/flex/pulls) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pressxco/flex) ![GitHub repo size](https://img.shields.io/github/repo-size/pressxco/flex)
 
 Flex is the simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.
@@ -39,5 +41,5 @@ mix.browserSync({
 
 ## Copyright / License
 
-© 2020 the contributors of PressX under the [GPL version 2.0] or later.
+© 2020-2021 the contributors of PressX under the [GPL version 2.0] or later.
 For more information, visit: https://github.com/pressxco/flex/blob/master/LICENSE
