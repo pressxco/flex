@@ -231,7 +231,13 @@ function fx_post_thumbnail() {
 
 		<?php else : ?>
 
-			<div class="post-image">
+			<div class="relative post-image">
+
+					<?php if ( is_sticky() ) : ?>
+
+						<span title="sticky" class="absolute z-40 flex items-center justify-center w-10 h-10 mr-2 text-white bg-black rounded-full bg-opacity-10 pin right-2 top-2"><?php fx_icon( 'sticky-icon' ); ?></span>
+
+					<?php endif; ?>
 
 				<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 					<?php

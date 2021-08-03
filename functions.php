@@ -163,12 +163,6 @@ function fx_menu( $menu_location, $depth, $walker ) {
 require get_template_directory() . '/includes/utilities/functions-helper.php';
 
 /**
- * Nav Walker
- */
-require get_template_directory() . '/includes/utilities/nav-walker.php';
-
-
-/**
  * Carbon Fields Settings
  */
 require get_template_directory() . '/includes/utilities/fields.php';
