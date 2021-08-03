@@ -327,9 +327,9 @@ function fx_entry_footer() {
 
 	?>
 
-	<div class="flex space-x-4">
+	<div class="flex items-center space-x-4">
 
-		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-12 h-12 rounded-full <?php echo esc_html( $author_image_class ); ?>">
+		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-16 h-16 rounded-full <?php echo esc_html( $author_image_class ); ?>">
 
 		<dl class="text-sm font-medium whitespace-no-wrap">
 
@@ -347,39 +347,12 @@ function fx_entry_footer() {
 
 			<dt class="sr-only"><?php esc_html_e( 'Author Archive Link', 'flex' ); ?></dt>
 
-			<dd><a href="<?php echo esc_html( get_author_posts_url( $author_id ) ); ?>" class="text-blue-600 hover:text-blue-700 transition-fx"><?php esc_html_e( 'See all posts by this author →', 'flex' ); ?></a></dd>
+			<dd class="mt-1"><a href="<?php echo esc_html( get_author_posts_url( $author_id ) ); ?>" class="text-blue-600 hover:text-blue-700 transition-fx"><?php esc_html_e( 'See all posts by this author →', 'flex' ); ?></a></dd>
 
 		</dl>
 
 	</div>
 
-		<?php if ( $categories_list ) : ?>
-
-	<div class="flex pt-4 mt-4 text-sm text-gray-600 border-t border-gray-100 post-categories">
-
-		<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Categories: ', 'flex' ); ?></span>
-
-			<?php
-			if ( $categories_list ) {
-				echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
-				printf(
-					wp_kses(
-					/* translators: 1: list of categories. */
-						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					$categories_list
-				);
-				echo '</span>';
-			}
-			?>
-	</div>
-
-	<?php endif; ?>
 
 		<?php if ( $tags_list ) : ?>
 

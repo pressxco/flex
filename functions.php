@@ -167,10 +167,6 @@ require get_template_directory() . '/includes/utilities/functions-helper.php';
  */
 require get_template_directory() . '/includes/utilities/nav-walker.php';
 
-/**
- * Comment Walker
- */
-require get_template_directory() . '/includes/utilities/comment-walker.php';
 
 /**
  * Carbon Fields Settings

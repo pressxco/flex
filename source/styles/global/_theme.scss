@@ -5,3 +5,13 @@
 #page-home {
 	min-height: calc(100vh - 3rem);
 }
+
+#page-404 {
+	min-height: calc(100vh - 12.5rem);
+	@apply flex items-center justify-center;
+}
+
+.text-404 {
+	font-size: 124px;
+	margin: 0;
+}

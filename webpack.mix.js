@@ -12,7 +12,6 @@ mix.combine(
   [
     'source/scripts/plugins/moby.js',
     'source/scripts/plugins/lazysizes.js',
-    'source/scripts/plugins/scrollpup.js',
     'source/scripts/bundle.js'
   ],
   'dist/scripts/bundle.js'
