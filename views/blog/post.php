@@ -33,9 +33,9 @@ $view_params = array(
 
 			<h2 class="post-title">
 
-				<a class="flex items-center text-gray-800 break-all" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
+				<a class="flex items-center text-gray-800 hover:text-opacity-80 transition-fx" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
 
-					<?php echo esc_html( wp_trim_words( $view_params['post_title'], 10 ) ); ?>
+					<?php echo esc_html( $view_params['post_title'] ); ?>
 
 				</a>
 
@@ -47,13 +47,13 @@ $view_params = array(
 
 			<div class="post-content">
 
-				<?php wp_kses_post( the_content() ); ?>
+				<?php echo wp_kses_post( $view_params['post_content'] ); ?>
 
 			</div>
 
 			<div class="read-more">
 
-				<a class="text-blue-600 transition-fx hover:text-blue-500" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
+				<a class="text-blue-600 transition-fx hover:text-opacity-80" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
 
 					<?php esc_html_e( 'Read more →', 'flex' ); ?>
 

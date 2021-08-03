@@ -235,7 +235,7 @@ function fx_post_thumbnail() {
 
 					<?php if ( is_sticky() ) : ?>
 
-						<span title="sticky" class="absolute z-40 flex items-center justify-center w-10 h-10 mr-2 text-white bg-black rounded-full bg-opacity-10 pin right-2 top-2"><?php fx_icon( 'sticky-icon' ); ?></span>
+						<span title="sticky" class="absolute z-40 flex items-center justify-center w-8 h-8 text-white bg-black rounded-full bg-opacity-10 pin right-3 top-3"><?php fx_icon( 'sticky-icon' ); ?></span>
 
 					<?php endif; ?>
 

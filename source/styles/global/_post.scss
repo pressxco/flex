@@ -20,15 +20,20 @@
 }
 
 .post-title {
-	@apply w-full mt-0 overflow-hidden text-2xl font-bold tracking-tight block;
+	word-break: break-word;
+	@apply w-full mt-0 text-[1.65rem] leading-[2.2rem] font-bold tracking-tight block;
 
 	&.single {
-		@apply text-2xl lg:text-3xl;
+		@apply text-2xl lg:text-3xl lg:leading-[2.4rem];
 	}
 }
 
 .post-category {
-	@apply font-semibold text-blue-700 text-xsmd;
+	@apply font-semibold text-xsmd;
+
+	a {
+		@apply text-blue-700 hover:text-opacity-80 transition-fx;
+	}
 }
 
 .post-content {

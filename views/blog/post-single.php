@@ -32,9 +32,9 @@ $view_params = array(
 
 			<h2 class="post-title single">
 
-				<a class="flex items-center text-gray-800 break-all" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
+				<a class="flex items-center text-gray-800" href="<?php echo esc_url( $view_params['post_link'] ); ?>">
 
-					<?php echo esc_html( wp_trim_words( $view_params['post_title'], 10 ) ); ?>
+					<?php echo esc_html( $view_params['post_title'] ); ?>
 
 				</a>
 
