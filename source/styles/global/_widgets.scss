@@ -3,7 +3,7 @@
 ========================================================================== */
 
 .widget {
-	@apply bg-white rounded shadow-sm py-4 px-7 text-gray-500;
+	@apply bg-white rounded border border-gray-100 py-4 px-7 text-gray-500;
 
 	.widget-title {
 		@apply text-base font-medium tracking-tight text-gray-900 mb-0 border-b border-gray-100 pb-4;

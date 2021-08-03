@@ -333,7 +333,7 @@ function fx_entry_footer() {
 
 	?>
 
-	<div class="flex items-center space-x-4">
+	<div class="flex space-x-4 items-top">
 
 		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-16 h-16 rounded-full <?php echo esc_html( $author_image_class ); ?>">
 

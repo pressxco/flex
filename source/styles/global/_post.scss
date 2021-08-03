@@ -4,7 +4,7 @@
 
 .post,
 .type-page {
-	@apply bg-white rounded shadow-sm xl:grid xl:items-baseline;
+	@apply bg-white rounded  xl:grid xl:items-baseline border border-gray-100;
 }
 
 .post-heading {
