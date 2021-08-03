@@ -101,22 +101,27 @@ iframe {
 	width: 100%;
 }
 
-[type="text"],
-[type="email"],
-[type="url"],
-[type="password"],
-[type="number"],
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="search"],
-[type="tel"],
-[type="time"],
-[type="week"],
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="week"],
 [multiple],
 textarea,
 select {
-	@apply rounded-md border-gray-200 text-gray-600;
+	@apply border-gray-200 border rounded text-gray-600 h-9 text-sm;
+}
+
+.btn,
+input[type="submit"] {
+	@apply inline-flex h-9 text-gray-600 border border-gray-200 bg-white font-medium px-6 text-sm rounded cursor-pointer;
 }
 
 .container {
@@ -149,4 +154,14 @@ select {
 
 img.lazyload:not([src]) {
 	visibility: hidden;
+}
+
+.text-404 {
+	font-size: 124px;
+	margin: 0;
+}
+
+#page-404 {
+	min-height: calc(100vh - 12.5rem);
+	@apply flex items-center justify-center;
 }

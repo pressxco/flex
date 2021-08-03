@@ -12,8 +12,6 @@
 ?>
 		</main>
 
-		<?php get_sidebar(); ?>
-
 		<footer id="primary">
 
 			<div class="container">

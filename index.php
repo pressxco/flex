@@ -12,7 +12,7 @@
 
 <?php get_header(); ?>
 
-<div id="welcome">
+<div id="page-home">
 
 	<div class="container px-4 py-10 mx-auto lg:px-6">
 

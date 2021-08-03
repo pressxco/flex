@@ -1,3 +1,7 @@
+/* =============================================================================
+	Widgets
+========================================================================== */
+
 .widget {
 	@apply bg-white rounded shadow-sm py-4 px-7 text-gray-500;
 
@@ -29,6 +33,25 @@
 	}
 }
 
-#primary .wp-block-tag-cloud .tag-cloud-link {
-	@apply text-sm;
+/* =============================================================================
+	Widget Customizations
+========================================================================== */
+
+#primary {
+	.searchform {
+		div {
+			@apply flex;
+		}
+		input[type="text"] {
+			@apply flex-grow mr-2.5;
+		}
+		input[type="submit"] {
+			@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600;
+		}
+	}
+	.wp-block-tag-cloud {
+		.tag-cloud-link {
+			@apply text-sm;
+		}
+	}
 }

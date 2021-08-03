@@ -65,8 +65,6 @@
 
 					</nav>
 
-					<?php fx_template( 'views/global/search' ); ?>
-
 					<?php fx_template( 'views/global/hamburger' ); ?>
 
 				</div>
