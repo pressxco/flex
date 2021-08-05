@@ -21,6 +21,8 @@
   "devDependencies": {
     "@prettier/plugin-php": "^0.16.3",
     "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/line-clamp": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.1",
     "@wordpress/env": "^4.1.0",
     "autoprefixer": "^10.2.5",
     "browser-sync": "^2.26.14",
@@ -41,11 +43,5 @@
     "sass-loader": "^11.1.0",
     "tailwindcss": "^2.1.2",
     "webpack-livereload-plugin": "^1.2.0"
-  },
-  "dependencies": {
-    "@tailwindcss/line-clamp": "^0.2.1",
-    "@tailwindcss/typography": "^0.4.1",
-    "ellipsed": "^1.5.0",
-    "laravel-mix-imgmin": "^0.2.0"
   }
 }

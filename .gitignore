@@ -1,7 +1,6 @@
 # Dev Packages
 /node_modules
 /vendor
-mix-manifest.json
 
 # Output files
 /dist
@@ -14,3 +13,4 @@ doc/
 .DS_Store
 .idea
 .secret
+mix-manifest.json

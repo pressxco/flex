@@ -7,11 +7,30 @@ module.exports = {
   mode: 'jit',
   purge: {
     content: [
-      './*.php',
-      './**/*.php',
-      './**/**/*.php',
+      './sources/**/*.{svg,css,png,jpg,js}',
+      './includes/**/*.php',
+      './views/**/*.php',
       './safelist.txt',
+      //
+      './404.php',
+      './archive.php',
+      './comments.php',
+      './footer.php',
+      './functions.php',
+      './header.php',
+      './index.php',
+      './page.php',
+      './search.php',
+      './sidebar.php',
+      './single.php',
+
     ],
+    options: {
+      safelist: [],
+      blocklist: [],
+      keyframes: true,
+      fontFace: true,
+    },
   },
   darkMode: 'class', // or 'media' or 'class'
   theme: {

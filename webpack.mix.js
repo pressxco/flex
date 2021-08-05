@@ -1,19 +1,35 @@
 let mix = require('laravel-mix');
-let path = require('path');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
-mix.setPublicPath(path.resolve('./'));
+mix.setPublicPath('./dist');
 
-mix.sass('source/styles/main.scss', 'dist/styles');
+mix.sass('source/styles/main.scss', 'styles/main.css', {
+  sassOptions: {
+    outputStyle: 'compressed'
+  }
+})
+  .options({
+    postCss: [
+      require('css-declaration-sorter')({
+        order: 'smacss'
+      })
+    ],
+    autoprefixer: {
+      options: {
+        browsers: [
+          'last 6 versions',
+        ]
+      }
+    }
+  });
 
-mix.combine(
-  [
-    'source/scripts/plugins/moby.js',
-    'source/scripts/plugins/lazysizes.js',
-    'source/scripts/bundle.js'
-  ],
+mix.combine([
+  'source/scripts/plugins/moby.js',
+  'source/scripts/plugins/lazysizes.js',
+  'source/scripts/bundle.js'
+],
   'dist/scripts/bundle.js'
 );
 
@@ -25,6 +41,7 @@ mix.options({
     require('postcss-import'),
     require('tailwindcss'),
     require('autoprefixer'),
+
   ]
 });
 
@@ -32,9 +49,9 @@ mix.webpackConfig({
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: "source/images", to: "dist/images" },
-        { from: "source/icons", to: "dist/icons" },
-        { from: "source/fonts", to: "dist/fonts" },
+        { from: "source/images", to: "images" },
+        { from: "source/icons", to: "icons" },
+        { from: "source/fonts", to: "fonts" },
       ],
     }),
     new ImageminPlugin({
@@ -48,13 +65,13 @@ mix.webpackConfig({
   ]
 });
 
-mix.disableNotifications();
-
 mix.browserSync({
   proxy: 'http://localhost:8888',
   open: 'external',
   port: 3000,
-  files: ["dist/**/*.php", "*.php", "**/*.php", "source/**/**/*"]
+  files: ["*.php", 'includes/**/*.php', 'views/**/*.php', "source/**/**/*"]
 });
+
+mix.disableNotifications();
 
 mix.version();
