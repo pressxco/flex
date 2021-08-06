@@ -22,7 +22,7 @@
 
 				<p>
 
-					<a class="inline-flex items-center text-blue-600" href="<?php esc_html( home_url() ); ?>">
+					<a class="inline-flex items-center text-blue-600" href="<?php esc_attr( home_url() ); ?>">
 
 						<?php fx_icon( 'arrow-left' ); ?>
 

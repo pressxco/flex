@@ -284,44 +284,6 @@ add_filter( 'body_class', 'fx_body_classes' );
 
 
 /**
- * Pingback Header
- *
- * @return void
- */
-function fx_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	}
-}
-add_action( 'wp_head', 'fx_pingback_header' );
-
-
-function fx_remove_jquery_migrate( &$scripts ) {
-
-	if ( ! is_admin() ) {
-		$scripts->remove( 'jquery' );
-		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
-	}
-
-}
-add_filter( 'wp_default_scripts', 'fx_remove_jquery_migrate' );
-
-
-/**
- * Hide WP Version
- *
- * @return void
- */
-function fx_hide_wp_version() {
-	return '';
-}
-
-remove_action( 'wp_head', 'wp_generator' );
-
-add_filter( 'the_generator', 'fx_hide_wp_version' );
-
-
-/**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function fx_entry_footer() {
