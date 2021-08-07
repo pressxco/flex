@@ -1,7 +1,18 @@
 <?php
+/**
+ * Menu fallback.
+ *
+ * @package flex
+ * @author pressx
+ * @since 1.0.0
+ */
+
+/**
+ * Primary menu fallback.
+ */
 function fx_main_menu_fallback() {
 	?>
-  <nav class="primary">
+	<nav class="primary">
 		<ul class="primary-menu">
 			<li id="menu-item-1303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1303">
 				<a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
