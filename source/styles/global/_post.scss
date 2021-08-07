@@ -21,6 +21,7 @@
 
 .post-title {
 	word-break: break-word;
+
 	@apply w-full mt-0 text-[1.65rem] leading-[2.2rem] font-bold tracking-tight block;
 
 	&.single {

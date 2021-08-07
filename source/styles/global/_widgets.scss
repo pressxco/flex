@@ -3,6 +3,8 @@
 ========================================================================== */
 
 .widget {
+	word-break: break-word;
+
 	@apply bg-white rounded border border-gray-100 py-4 px-7 text-gray-500;
 
 	.widget-title {
@@ -39,16 +41,18 @@
 
 #primary {
 	.search-form {
-		div {
-			@apply flex;
-		}
+		@apply flex;
 
-		input[type="text"] {
+		label {
 			@apply flex-grow mr-2.5;
 		}
 
+		input[type="search"] {
+			@apply w-full;
+		}
+
 		input[type="submit"] {
-			@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600;
+			@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600 h-10;
 		}
 	}
 

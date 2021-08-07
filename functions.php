@@ -217,7 +217,7 @@ function fx_setup() {
 	 *
 	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
 	 */
-	add_theme_support( 'responsive-embeds' )
+	add_theme_support( 'responsive-embeds' );
 
 	/**
 	 * Wide alignment support.

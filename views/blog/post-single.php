@@ -69,7 +69,7 @@
 
 		<?php if ( ! is_page() ) : ?>
 
-		<div class="px-8 py-6 border-t border-gray-100 single-footer">
+		<div class="px-10 py-6 border-t border-gray-100 single-footer">
 
 			<?php fx_entry_footer(); ?>
 
