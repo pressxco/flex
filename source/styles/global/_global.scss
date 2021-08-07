@@ -1,8 +1,6 @@
-/*--*--*--*--*--*--*--*--*--*--*-*--*--*--*--*--*--*--*--*
-
-	* ------- Global Style ------- *
-
--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
+/* =============================================================================
+  Global Styles
+========================================================================== */
 
 // WARNING: TRY MAKING EVERYTHING GLOBAL AND MODULAR AS MUCH AS POSSIBLE!
 
@@ -45,6 +43,7 @@ h6 {
 
 h1 {
 	@apply text-4xl my-4;
+
 	line-height: normal;
 	font-weight: bold;
 	letter-spacing: -1px;
@@ -52,6 +51,7 @@ h1 {
 
 h2 {
 	@apply text-3xl my-3;
+
 	line-height: normal;
 	font-weight: bold;
 	letter-spacing: -1px;
@@ -59,6 +59,7 @@ h2 {
 
 h3 {
 	@apply text-2xl my-2;
+
 	line-height: normal;
 	font-weight: normal;
 	letter-spacing: -0.7px;
@@ -66,6 +67,7 @@ h3 {
 
 h4 {
 	@apply text-xl my-1;
+
 	line-height: normal;
 	font-weight: normal;
 	letter-spacing: -0.5px;
@@ -73,6 +75,7 @@ h4 {
 
 h5 {
 	@apply text-lg;
+
 	line-height: normal;
 	font-weight: normal;
 	letter-spacing: 0;
@@ -80,6 +83,7 @@ h5 {
 
 h6 {
 	@apply text-base;
+
 	line-height: normal;
 	font-weight: normal;
 	letter-spacing: 0;

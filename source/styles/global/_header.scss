@@ -39,7 +39,7 @@ nav.primary {
 		&.menu-item-has-children {
 			& > a {
 				&:after {
-					font-family: "fx-icons" !important;
+					font-family: "fx-icons", sans-serif !important;
 					content: "\e908";
 					display: flex;
 					@apply mt-0.5 text-base;
@@ -71,7 +71,7 @@ nav.primary {
 			&.menu-item-has-children {
 				& > a {
 					&:after {
-						font-family: "fx-icons" !important;
+						font-family: "fx-icons", sans-serif !important;
 						content: "\e907";
 						display: flex;
 						@apply mt-0.5 ml-auto text-base;

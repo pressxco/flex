@@ -42,18 +42,22 @@
 		div {
 			@apply flex;
 		}
+
 		input[type="text"] {
 			@apply flex-grow mr-2.5;
 		}
+
 		input[type="submit"] {
 			@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600;
 		}
 	}
+
 	.wp-block-tag-cloud {
 		.tag-cloud-link {
 			@apply text-sm;
 		}
 	}
+
 	.widget_search {
 		@apply px-4;
 	}

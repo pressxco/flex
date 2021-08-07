@@ -163,16 +163,26 @@ function fx_setup() {
 	 */
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	/*
-	* Make theme available for translation.
-	* Translations can be filed in the /languages/ directory.
-	*/
+	/**
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/load_theme_textdomain/
+	 */
 	load_theme_textdomain( 'flex', get_template_directory() . '/languages' );
 
-	// Custom Logo.
+	/**
+	 * Custom logo support.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/custom-logo/
+	 */
 	add_theme_support( 'custom-logo' );
 
-	// Automatic Feeds.
+	/**
+	 * Automatic feed links support.
+	 *
+	 * @link https://codex.wordpress.org/Automatic_Feed_Links#:~:text=Automatic%20Feed%20Links%20is%20a,the%20deprecated%20automatic_feed_links()%20function.
+	 */
 	add_theme_support( 'automatic-feed-links' );
 
 	// Custom Headers.
