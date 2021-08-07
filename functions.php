@@ -250,40 +250,6 @@ function fx_styles_and_scripts() {
 add_action( 'wp_enqueue_scripts', 'fx_styles_and_scripts' );
 
 /**
- * FX Menu
- * Example Nav Menu for the theme.
- *
- * @param string $menu_location location variable.
- * @since 1.0.0
- * @return void
- */
-function fx_menu( $menu_location, $depth, $walker ) {
-
-		wp_nav_menu(
-			array(
-				'theme_location'  => $menu_location,
-				'menu'            => '',
-				'menu_class'      => 'menu',
-				'menu_id'         => '',
-				'container'       => '',
-				'container_class' => '',
-				'container_id'    => '',
-				'echo'            => true,
-				'fallback_cb'     => 'wp_page_menu',
-				'before'          => '',
-				'after'           => '',
-				'link_before'     => '',
-				'link_after'      => '',
-				'items_wrap'      => '<ul class="' . $menu_location . '">%3$s</ul>',
-				'depth'           => $depth,
-				'walker'          => $walker,
-
-			)
-		);
-
-}
-
-/**
  * FX Helper Functions
  */
 require get_template_directory() . '/includes/utilities/functions-helper.php';
