@@ -6,11 +6,12 @@ Author URI: https://www.pressx.co
 Version: 1.0.0
 */
 
+// Tailwind
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-// Setting variables and mixins
+// Global components
 @import "global/_animations";
 @import "global/_wp";
 @import "global/_global";
@@ -25,8 +26,9 @@ Version: 1.0.0
 @import "global/_theme";
 @import "global/_footer";
 
-// Pages - The page specific styles
+// Pages
 
+// Tailwind customizations
 @layer components {
 	.transition-fx {
 		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;

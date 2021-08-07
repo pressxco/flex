@@ -187,20 +187,43 @@ function fx_setup() {
 	/**
 	 * Automatic feed links support.
 	 *
-	 * @link https://codex.wordpress.org/Automatic_Feed_Links#:~:text=Automatic%20Feed%20Links%20is%20a,the%20deprecated%20automatic_feed_links()%20function.
+	 * @link https://codex.wordpress.org/Automatic_Feed_Links#:~:text=Automatic%20Feed%20Links%20is%20a,the%20deprecated%20automatic_feed_links()%20function
 	 */
 	add_theme_support( 'automatic-feed-links' );
 
-	// Custom Headers.
+	/**
+	 * Custom headers support.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+	 */
 	add_theme_support( 'custom-header' );
 
-	// Custom Backgrounds.
+	/**
+	 * Custom background support.
+	 *
+	 * @link https://codex.wordpress.org/Custom_Backgrounds
+	 */
 	add_theme_support( 'custom-background' );
 
+	/**
+	 * Default block styles
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#default-block-styles
+	 */
 	add_theme_support( 'wp-block-styles' );
 
-	add_theme_support( 'responsive-embeds' );
+	/**
+	 * Responsive embeds support.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/
+	 */
+	add_theme_support( 'responsive-embeds' )
 
+	/**
+	 * Wide alignment support.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#wide-alignment
+	 */
 	add_theme_support( 'align-wide' );
 
 }
