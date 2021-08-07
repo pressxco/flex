@@ -7,8 +7,8 @@
  * @since 1.0.0
  */
 
-$loop     = ( isset( $args['loop_arguments'] ) ) ? new WP_Query( $args['loop_arguments'] ) : $wp_query;
-$template = ( isset( $args['template'] ) ) ? $args['template'] : 'views/blog/post';
+$loop     = isset( $args['loop_arguments'] ) ? new WP_Query( $args['loop_arguments'] ) : $wp_query;
+$template = isset( $args['template'] ) ? $args['template'] : 'views/blog/post';
 
 ?>
 
