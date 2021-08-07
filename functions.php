@@ -9,8 +9,11 @@
  * @since 1.0.0
  */
 
-// Load Composer’s autoloader.
+/**
+ * Load composer autoload if exists.
+ */
 $autoload_file = __DIR__ . '/vendor/autoload.php';
+
 if ( file_exists( $autoload_file ) ) {
 	require $autoload_file;
 }
@@ -247,7 +250,7 @@ add_action( 'widgets_init', 'fx_register_sidebars' );
 function fx_styles_and_scripts() {
 
 	// Theme Styles.
-	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), true ); // Compiled by "style.scss".
+	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), true );
 
 	// Theme Scripts.
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/dist/scripts/bundle.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
