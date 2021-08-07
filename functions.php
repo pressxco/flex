@@ -10,7 +10,10 @@
  */
 
 // Load Composer’s autoloader.
-require_once __DIR__ . '/vendor/autoload.php';
+$autoload_file = __DIR__ . '/vendor/autoload.php';
+if ( file_exists( $autoload_file ) ) {
+	require $autoload_file;
+}
 
 /**
  * FX Theme Setup
@@ -237,7 +240,7 @@ function fx_styles_and_scripts() {
 	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), true ); // Compiled by "style.scss".
 
 	// Theme Scripts.
-	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/dist/scripts/bundle.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/dist/scripts/bundle.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 	// Comment Reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -265,7 +268,7 @@ require get_template_directory() . '/includes/utilities/fields.php';
 require get_template_directory() . '/includes/components/breadcrumb-class.php';
 
 /**
- * Breadcrumb
+ * Menu fallback
  */
 require get_template_directory() . '/includes/fallbacks/menu-fallback.php';
 
