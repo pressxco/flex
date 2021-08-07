@@ -21,11 +21,7 @@
 
 			<h2 class="post-title single">
 
-				<a class="flex items-center text-gray-800" href="<?php echo esc_url( get_the_permalink() ); ?>">
-
 					<?php echo esc_html( get_the_title() ); ?>
-
-				</a>
 
 			</h2>
 
