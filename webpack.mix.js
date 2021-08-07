@@ -1,7 +1,8 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+require('laravel-mix-stylelint');
 
 mix.setPublicPath('./dist');
 
@@ -24,6 +25,8 @@ mix.sass('source/styles/main.scss', 'styles/main.css', {
       }
     }
   });
+
+mix.stylelint({ configFile: path.join({ 'stylelint.js'} });
 
 mix.combine([
   'source/scripts/plugins/moby.js',

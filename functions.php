@@ -20,28 +20,154 @@ require_once __DIR__ . '/vendor/autoload.php';
  * @return void
  */
 function fx_setup() {
+
+	/**
+	 * Disable full-site editing support.
+	 *
+	 * @link https://wptavern.com/gutenberg-10-5-embeds-pdfs-adds-verse-block-color-options-and-introduces-new-patterns
+	 */
+	remove_theme_support( 'block-templates' );
+
+	/**
+	 * Register the navigation menus.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
+	 */
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'flex' ),
+			'mobile'  => __( 'Mobile Menu', 'flex' ),
+		)
+	);
+
+	/**
+	 * Register the editor color palette.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
+	 */
+	add_theme_support( 'editor-color-palette', array() );
+
+	/**
+	 * Register the editor color gradient presets.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-gradient-presets
+	 */
+	add_theme_support( 'editor-gradient-presets', array() );
+
+	/**
+	 * Register the editor font sizes.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-font-sizes
+	 */
+	add_theme_support( 'editor-font-sizes', array() );
+
+	/**
+	 * Register relative length units in the editor.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#support-custom-units
+	 */
+	add_theme_support( 'custom-units' );
+
+	/**
+	 * Enable support for custom line heights in the editor.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#supporting-custom-line-heights
+	 */
+	add_theme_support( 'custom-line-height' );
+
+	/**
+	 * Enable support for custom block spacing control in the editor.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#spacing-control
+	 */
+	add_theme_support( 'custom-spacing' );
+
+	/**
+	 * Disable custom colors in the editor.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
+	 */
+	add_theme_support( 'disable-custom-colors' );
+
+	/**
+	 * Disable custom color gradients in the editor.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-gradients
+	 */
+	add_theme_support( 'disable-custom-gradients' );
+
+	/**
+	 * Disable custom font sizes in the editor.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-font-sizes
+	 */
+	add_theme_support( 'disable-custom-font-sizes' );
+
+	/**
+	 * Disable the default block patterns.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-the-default-block-patterns
+	 */
+	remove_theme_support( 'core-block-patterns' );
+
+	/**
+	 * Enable plugins to manage the document title.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
+	 */
+	add_theme_support( 'title-tag' );
+
+	/**
+	 * Enable post thumbnail support.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
+
+	/**
+	 * Enable wide alignment support.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment
+	 */
+	add_theme_support( 'align-wide' );
+
+	/**
+	 * Enable responsive embed support.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
+	 */
+	add_theme_support( 'responsive-embeds' );
+
+	/**
+	 * Enable HTML5 markup support.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
+	 */
+	add_theme_support(
+		'html5',
+		array(
+			'caption',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'search-form',
+			'script',
+			'style',
+		)
+	);
+
+	/**
+	 * Enable selective refresh for widgets in customizer.
+	 *
+	 * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 	/*
 	* Make theme available for translation.
 	* Translations can be filed in the /languages/ directory.
 	*/
 	load_theme_textdomain( 'flex', get_template_directory() . '/languages' );
-
-	// Register menus.
-	register_nav_menus(
-		array(
-
-			'primary' => __( 'Primary Menu', 'flex' ),
-
-			'mobile'  => __( 'Mobile Menu', 'flex' ),
-
-		)
-	);
-
-	// Add Title Tag Support.
-	add_theme_support( 'title-tag' );
-
-	// Post Featured Images Support.
-	add_theme_support( 'post-thumbnails' );
 
 	// Custom Logo.
 	add_theme_support( 'custom-logo' );
