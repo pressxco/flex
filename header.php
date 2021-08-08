@@ -75,8 +75,12 @@
 
 		<main id="primary" class="site-main" role="main">
 
-		<div class="container">
+		<div id="breadcrumb">
 
-			<?php fx_template( 'views/global/breadcrumbs' ); ?>
+			<div class="container">
+
+				<?php fx_template( 'views/global/breadcrumbs' ); ?>
+
+			</div>
 
 		</div>
