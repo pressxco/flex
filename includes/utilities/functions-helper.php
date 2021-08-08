@@ -11,41 +11,28 @@
  * Debug Mode
  * Dump the data
  *
+ * @param mixed $variable Any variable to pass from var_dump() function.
  * @since 1.0.0
  */
-function debug( $var ) {
+function debug( $variable ) {
 
-	echo '<pre>' . esc_html( var_dump( $var ) ) . '</pre>';
+	echo '<pre>' . esc_html( var_dump( $variable ) ) . '</pre>'; // phpcs:ignore
 
 }
 
 /**
  * Debug Mode
- * Dump the data
+ * Dump the data and exit the code
  *
+ * @param mixed $variable Any variable to pass from var_dump() function.
  * @since 1.0.0
  */
-function dd( $var ) {
+function dd( $variable ) {
 
-	echo '<pre>' . esc_html( var_dump( $var ) ) . '</pre>';
-
+	debug( $variable );
 	die();
 
 }
-
-/**
- * Reset Inline Image Dimensions
- *
- * @since 1.0.0
- */
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-
-	$html = preg_replace( '/(width|height)=\"\d*\"\s/', '', $html );
-
-	return $html;
-
-}
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
 
 
 /**
@@ -75,7 +62,6 @@ add_filter(
  *
  * @since 1.0.0
  */
-
 function fx_icon( $icon ) {
 
 	echo file_get_contents( get_stylesheet_directory() . '/dist/icons/' . $icon . '.svg' );
@@ -87,7 +73,7 @@ function fx_icon( $icon ) {
  * Exactly the same thing as get_template_part.
  * Added for sytanx unity of FX.
  *
- * @param string $template
+ * @param string $image
  * @since 1.0.0
  */
 function fx_image( $image, $alt = null, $class = 'x-image' ) {
@@ -105,7 +91,7 @@ function fx_image( $image, $alt = null, $class = 'x-image' ) {
  *
  * @since 1.0.0
  */
-function fx_button( $content, $link, $class, $style ) {
+function fx_button( $content, $link = '#', $class = '', $style = '' ) {
 
 	echo '<a class="' . esc_attr( $class ) . '" href="' . esc_attr( $link ) . '" style="' . esc_attr( $style ) . '">' . esc_html( $content ) . '</a>';
 
@@ -116,7 +102,8 @@ function fx_button( $content, $link, $class, $style ) {
  * Exactly the same thing as get_template_part.
  * Added for sytanx unity of FX.
  *
- * @param string $template
+ * @param string $template Template name.
+ * @param array  $args Arguments to pass.
  * @since 1.0.0
  */
 function fx_template( $template, $args = array() ) {
@@ -288,38 +275,45 @@ add_filter( 'body_class', 'fx_body_classes' );
  */
 function fx_entry_footer() {
 
+	// Don't show on pages.
+	if ( is_page() ) {
+		return;
+	}
+
 	$author_id          = get_the_author_meta( 'ID' );
-	$author_image_class = ( get_the_author_meta( 'description' ) ) ? 'mt-2' : '';
+	$author_image_class = get_the_author_meta( 'description' ) ? 'mt-2' : '';
 	$categories_list    = get_the_category_list( esc_html__( ', ', 'flex' ) );
 	$tags_list          = get_the_tag_list( '', ', ' );
 
 	?>
 
-	<div class="flex space-x-4 items-top">
+	<div class="px-10 py-6 border-t border-gray-100 single-footer">
 
-		<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-16 h-16 rounded-full <?php echo esc_html( $author_image_class ); ?>">
+		<div class="flex space-x-4 items-top">
 
-		<dl class="text-sm font-medium whitespace-no-wrap">
+			<img src="<?php echo esc_html( get_avatar_url( $author_id ) ); ?>" alt="<?php echo esc_html( get_the_author_meta( 'display_name' ) . ' Image' ); ?>" class="w-16 h-16 rounded-full <?php echo esc_html( $author_image_class ); ?>">
 
-			<dt class="sr-only"><?php esc_html_e( 'Author Name', 'flex' ); ?></dt>
+			<dl class="text-sm font-medium whitespace-no-wrap">
 
-			<dd class="text-lg text-gray-900"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></dd>
+				<dt class="sr-only"><?php esc_html_e( 'Author Name', 'flex' ); ?></dt>
 
-			<?php if ( get_the_author_meta( 'description' ) ) : ?>
+				<dd class="text-lg text-gray-900"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></dd>
 
-				<dt class="sr-only"><?php esc_html_e( 'Author Description', 'flex' ); ?></dt>
+				<?php if ( get_the_author_meta( 'description' ) ) : ?>
 
-				<dd class="mb-2 text-base font-normal text-gray-600"><?php echo esc_html( get_the_author_meta( 'description' ) ); ?></dd>
+					<dt class="sr-only"><?php esc_html_e( 'Author Description', 'flex' ); ?></dt>
 
-			<?php endif; ?>
+					<dd class="mb-2 text-base font-normal text-gray-600"><?php echo esc_html( get_the_author_meta( 'description' ) ); ?></dd>
 
-			<dt class="sr-only"><?php esc_html_e( 'Author Archive Link', 'flex' ); ?></dt>
+				<?php endif; ?>
 
-			<dd class="mt-1"><a href="<?php echo esc_html( get_author_posts_url( $author_id ) ); ?>" class="text-blue-600 hover:text-blue-700 transition-fx"><?php esc_html_e( 'See all posts by this author →', 'flex' ); ?></a></dd>
+				<dt class="sr-only"><?php esc_html_e( 'Author Archive Link', 'flex' ); ?></dt>
 
-		</dl>
+				<dd class="mt-1"><a href="<?php echo esc_html( get_author_posts_url( $author_id ) ); ?>" class="text-blue-600 hover:text-blue-700 transition-fx"><?php esc_html_e( 'See all posts by this author →', 'flex' ); ?></a></dd>
 
-	</div>
+			</dl>
+
+		</div>
 
 
 		<?php if ( $tags_list ) : ?>
@@ -341,7 +335,7 @@ function fx_entry_footer() {
 							),
 						)
 					),
-					$tags_list
+					esc_html( $tags_list )
 				);
 
 				echo '</span>';
@@ -349,8 +343,9 @@ function fx_entry_footer() {
 				?>
 		</div>
 
-	<?php endif; ?>
+		<?php endif; ?>
 
+	</div>
 		<?php
 
 }

@@ -21,7 +21,7 @@
 
 			<h2 class="post-title single">
 
-					<?php echo esc_html( get_the_title() ); ?>
+				<?php echo esc_html( get_the_title() ); ?>
 
 			</h2>
 
@@ -67,25 +67,8 @@
 
 		</div>
 
-		<?php if ( ! is_page() ) : ?>
+		<?php fx_entry_footer(); ?>
 
-		<div class="px-10 py-6 border-t border-gray-100 single-footer">
+		<?php comments_template(); ?>
 
-			<?php fx_entry_footer(); ?>
-
-		</div>
-
-		<?php endif; ?>
-
-		<?php if ( comments_open() ) : ?>
-
-		<div class="page-comments">
-
-			<?php comments_template(); ?>
-
-			<?php the_comments_navigation(); ?>
-
-		</div>
-
-		<?php endif; ?>
 </article>
