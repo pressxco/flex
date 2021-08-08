@@ -64,7 +64,7 @@ add_filter(
  */
 function fx_icon( $icon ) {
 
-	echo file_get_contents( get_stylesheet_directory() . '/dist/icons/' . $icon . '.svg' );
+	echo esc_html( file_get_contents( get_stylesheet_directory() . '/dist/icons/' . esc_attr( $icon ) . '.svg' ) );
 
 }
 
@@ -73,14 +73,14 @@ function fx_icon( $icon ) {
  * Exactly the same thing as get_template_part.
  * Added for sytanx unity of FX.
  *
- * @param string $image
+ * @param string $image Image name.
  * @since 1.0.0
  */
 function fx_image( $image, $alt = null, $class = 'x-image' ) {
 
 	$image_dir = get_stylesheet_directory_uri() . '/dist/images/';
 
-	echo '<img class="' . esc_attr( $class ) . ' lazyload" src="' . esc_html( $image_dir ) . esc_html( $image ) . '" alt="' . esc_attr( $alt ) . '">';
+	echo '<img class="' . esc_attr( $class ) . ' lazyload" src="' . esc_attr( $image_dir ) . esc_attr( $image ) . '" alt="' . esc_attr( $alt ) . '">';
 
 }
 
@@ -133,6 +133,8 @@ function fx_modify_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $si
 }
 add_filter( 'post_thumbnail_html', 'fx_modify_post_thumbnail_html', 10, 5 );
 
+
+
 function fx_lazyload_class( $attr ) {
 	$attr['class'] .= ' lazyload';
 	return $attr;
@@ -147,7 +149,7 @@ function fx_posted_by() {
 
 	$byline = sprintf(
 		wp_kses(
-		/* translators: %s: post author. */
+			/* translators: %s: post author. */
 			__( '<span class="screen-reader-text">by </span>%s', 'flex' ),
 			array(
 				'span' => array(
@@ -168,10 +170,8 @@ function fx_posted_by() {
  */
 function fx_posted_on() {
 
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
 	$time_string = sprintf(
-		$time_string,
+		'<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
 		esc_attr( get_the_date( DATE_W3C ) ),
 		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( DATE_W3C ) ),
@@ -180,7 +180,7 @@ function fx_posted_on() {
 
 	$posted_on = sprintf(
 		wp_kses(
-		/* translators: %s: post date. */
+			/* translators: %s: post date. */
 			__( '<span class="sr-only">Posted on </span>%s', 'flex' ),
 			array(
 				'span' => array(
@@ -191,7 +191,7 @@ function fx_posted_on() {
 		wp_kses_post( $time_string )
 	);
 
-	echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>';
 
 }
 
@@ -328,6 +328,7 @@ function fx_entry_footer() {
 
 				printf(
 					wp_kses(
+						/* translators: %1$s: Tags list. */
 						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
 						array(
 							'span' => array(
