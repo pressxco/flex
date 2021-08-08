@@ -64,7 +64,7 @@ add_filter(
  */
 function fx_icon( $icon ) {
 
-	echo esc_html( file_get_contents( get_stylesheet_directory() . '/dist/icons/' . esc_attr( $icon ) . '.svg' ) );
+	echo file_get_contents( get_stylesheet_directory() . '/dist/icons/' . esc_attr( $icon ) . '.svg' );
 
 }
 
