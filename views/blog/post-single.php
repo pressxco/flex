@@ -81,8 +81,6 @@
 
 		<div class="page-comments">
 
-			<?php wp_list_comments(); ?>
-
 			<?php comments_template(); ?>
 
 			<?php the_comments_navigation(); ?>
