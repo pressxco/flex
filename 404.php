@@ -9,9 +9,10 @@
  * @since 1.0.0
  */
 
-?>
-
-<?php get_header(); ?>
+fx_layout(
+	'default',
+	function() {
+		?>
 
 	<div id="page-404" class="container items-center px-8 mx-auto text-center">
 
@@ -35,5 +36,6 @@
 
 	</div>
 
-<?php
-get_footer();
+		<?php
+	}
+);
