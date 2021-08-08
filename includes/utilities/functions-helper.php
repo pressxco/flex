@@ -60,11 +60,12 @@ add_filter(
  * Use only icon name without extension.
  * Example: fx_icon('myicon');
  *
+ * @param string $icon Icon name.
  * @since 1.0.0
  */
 function fx_icon( $icon ) {
 
-	echo file_get_contents( get_stylesheet_directory() . '/dist/icons/' . esc_attr( $icon ) . '.svg' );
+	echo file_get_contents( get_stylesheet_directory() . '/dist/icons/' . esc_attr( $icon ) . '.svg' ); // phpcs:ignore
 
 }
 
@@ -74,9 +75,11 @@ function fx_icon( $icon ) {
  * Added for sytanx unity of FX.
  *
  * @param string $image Image name.
+ * @param string $alt Alternative text.
+ * @param string $class Image classes.
  * @since 1.0.0
  */
-function fx_image( $image, $alt = null, $class = 'x-image' ) {
+function fx_image( $image, $alt = '', $class = 'x-image' ) {
 
 	$image_dir = get_stylesheet_directory_uri() . '/dist/images/';
 
@@ -89,6 +92,10 @@ function fx_image( $image, $alt = null, $class = 'x-image' ) {
  * Request buttons with this custom functions.
  * Example: fx_button('My Button Text', '#', 'blue-button', 'margin-top: 20px;');
  *
+ * @param string $content Buton label.
+ * @param string $link Buton link.
+ * @param string $class Buton class.
+ * @param string $style Buton inline style.
  * @since 1.0.0
  */
 function fx_button( $content, $link = '#', $class = '', $style = '' ) {
@@ -134,7 +141,12 @@ function fx_modify_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $si
 add_filter( 'post_thumbnail_html', 'fx_modify_post_thumbnail_html', 10, 5 );
 
 
-
+/**
+ * Add `lazyload` class to images output.
+ *
+ * @param  array $attr Attributes registered.
+ * @return array The modified attributes array.
+ */
 function fx_lazyload_class( $attr ) {
 	$attr['class'] .= ' lazyload';
 	return $attr;
