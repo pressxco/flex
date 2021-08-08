@@ -42,7 +42,6 @@ function fx_setup() {
 	register_nav_menus(
 		array(
 			'primary' => __( 'Primary Menu', 'flex' ),
-			'mobile'  => __( 'Mobile Menu', 'flex' ),
 		)
 	);
 
