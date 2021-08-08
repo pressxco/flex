@@ -39,49 +39,46 @@ h4,
 h5,
 h6 {
 	color: inherit;
+	@apply font-bold;
 }
 
-h1 {
+h1,
+.h1-size {
 	@apply text-4xl my-4;
 
-	line-height: normal;
-	font-weight: bold;
-	letter-spacing: -1px;
-}
-
-h2 {
-	@apply text-3xl my-3;
-
-	line-height: normal;
-	font-weight: bold;
-	letter-spacing: -1px;
-}
-
-h3 {
-	@apply text-2xl my-2;
-
-	line-height: normal;
-	font-weight: normal;
 	letter-spacing: -0.7px;
 }
 
-h4 {
+h2,
+.h2-size {
+	@apply text-3xl my-3;
+
+	letter-spacing: -0.7px;
+}
+
+h3,
+.h3-size {
+	@apply text-2xl my-2;
+
+	letter-spacing: -0.7px;
+}
+
+h4,
+.h4-size {
 	@apply text-xl my-1;
 
-	line-height: normal;
-	font-weight: normal;
 	letter-spacing: -0.5px;
 }
 
-h5 {
+h5,
+.h5-size {
 	@apply text-lg;
 
-	line-height: normal;
-	font-weight: normal;
 	letter-spacing: 0;
 }
 
-h6 {
+h6,
+.h6-size {
 	@apply text-base;
 
 	line-height: normal;
@@ -90,7 +87,7 @@ h6 {
 }
 
 p {
-	@apply leading-7 my-4 text-gray-600;
+	@apply leading-7 my-4 text-current;
 }
 
 pre,
@@ -133,6 +130,14 @@ input[type="submit"] {
 
 	&--single {
 		@apply px-0 sm:px-6;
+
+		.post {
+			@apply border-none;
+		}
+	}
+
+	&--wide {
+		@apply px-2 sm:px-6;
 	}
 }
 
@@ -157,7 +162,7 @@ input[type="submit"] {
 }
 
 img.lazyload:not([src]) {
-	visibility: hidden;
+	@apply invisible;
 }
 
 .screen-reader-text {

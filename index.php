@@ -14,7 +14,7 @@
 
 <div id="page-home">
 
-	<div class="container px-4 py-10 mx-auto lg:px-6">
+	<div class="container py-4 container--wide sm:py-10">
 
 		<div class="grid grid-cols-3 gap-7">
 

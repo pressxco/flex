@@ -313,7 +313,7 @@ function fx_entry_footer() {
 
 	?>
 
-	<div class="px-10 py-6 border-t border-gray-100 single-footer">
+	<div class="px-6 py-6 border-t border-gray-100 sm:px-10 single-footer">
 
 		<div class="flex space-x-4 items-top">
 
@@ -362,7 +362,7 @@ function fx_entry_footer() {
 							),
 						)
 					),
-					esc_html( $tags_list )
+					$tags_list
 				);
 
 				echo '</span>';

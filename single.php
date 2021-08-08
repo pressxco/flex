@@ -27,7 +27,7 @@
 
 			</div>
 
-			<div class="col-span-3 md:col-span-1">
+			<div class="col-span-3 px-6 md:col-span-1 sm:px-0">
 
 				<?php get_sidebar(); ?>
 

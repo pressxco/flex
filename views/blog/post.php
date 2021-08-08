@@ -33,7 +33,7 @@
 
 		</div>
 
-		<div class="w-full px-10 pt-4 space-y-4 overflow-hidden">
+		<div class="w-full px-6 pt-4 space-y-4 overflow-hidden sm:px-10">
 
 			<div class="post-content">
 
