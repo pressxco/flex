@@ -21,7 +21,7 @@
 
 				<div class="post-loop space-y-7">
 
-					<?php fx_template( 'views/blog/post-loop', array( 'template' => 'views/blog/post-single' ) ); ?>
+					<?php fx_render( 'views/blog/post-loop', array( 'template' => 'views/blog/post-single' ) ); ?>
 
 				</div>
 

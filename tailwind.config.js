@@ -189,7 +189,7 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         '.container': {
-          maxWidth: '1140px',
+          maxWidth: '1170px',
           '@screen sm': {
             maxWidth: '100%',
           },
@@ -200,7 +200,7 @@ module.exports = {
             maxWidth: '1140px',
           },
           '@screen xl': {
-            maxWidth: '1140px',
+            maxWidth: '1170px',
           },
         }
       })

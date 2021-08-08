@@ -15,7 +15,7 @@
 
 	<div class="container px-8 pb-10 mx-auto lg:px-6">
 
-		<?php fx_template( 'views/global/search-title' ); ?>
+		<?php fx_render( 'views/global/search-title' ); ?>
 
 		<div class="grid grid-cols-3 gap-7">
 
@@ -23,7 +23,7 @@
 
 				<div class="post-loop space-y-7">
 
-					<?php fx_template( 'views/blog/post-loop' ); ?>
+					<?php fx_render( 'views/blog/post-loop' ); ?>
 
 				</div>
 

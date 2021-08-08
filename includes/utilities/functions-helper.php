@@ -112,7 +112,7 @@ function fx_button( $content, $link = '#', $class = '', $style = '' ) {
  * @param function $layout_content Layout content view.
  * @since 1.0.0
  */
-function fx_layout( $layout_name, $layout_content ) {
+function fx_layout( $layout_name, $layout_content, $type ) {
 
 	require get_template_directory() . "/views/layouts/$layout_name.php";
 
@@ -127,7 +127,7 @@ function fx_layout( $layout_name, $layout_content ) {
  * @param array  $args Arguments to pass.
  * @since 1.0.0
  */
-function fx_template( $template, $args = array() ) {
+function fx_render( $template, $args = array() ) {
 
 	return get_template_part( $template, '', $args );
 

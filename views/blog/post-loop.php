@@ -17,7 +17,7 @@ while ( $loop->have_posts() ) :
 	$loop->the_post();
 	?>
 
-	<?php fx_template( $template ); ?>
+	<?php fx_render( $template ); ?>
 
 <?php endwhile; ?>
 

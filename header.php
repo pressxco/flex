@@ -65,7 +65,7 @@
 
 					</nav>
 
-					<?php fx_template( 'views/global/hamburger' ); ?>
+					<?php fx_render( 'views/global/hamburger' ); ?>
 
 				</div>
 
@@ -79,7 +79,7 @@
 
 			<div class="container">
 
-				<?php fx_template( 'views/global/breadcrumbs' ); ?>
+				<?php fx_render( 'views/global/breadcrumbs' ); ?>
 
 			</div>
 
