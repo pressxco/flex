@@ -137,10 +137,6 @@ input[type="submit"] {
 
 .container {
 	@apply mx-auto px-6;
-
-	&--wide {
-		@apply px-2 sm:px-6;
-	}
 }
 
 .single-post {
