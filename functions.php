@@ -271,10 +271,18 @@ add_action( 'widgets_init', 'fx_register_sidebars' );
  */
 function fx_styles_and_scripts() {
 
-	// Theme Styles.
+	/**
+	 * Theme Styles
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+	 */
 	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), true );
 
-	// Theme Scripts.
+	/**
+	 * Theme Scripts
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
+	 */
 	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/dist/scripts/bundle.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 	// Comment Reply.
