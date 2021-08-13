@@ -2,7 +2,7 @@
   Header
 ========================================================================== */
 
-header#primary {
+header.primary {
 	@apply items-center flex bg-white border-b border-gray-100 relative;
 
 	.wrap {

@@ -31,7 +31,7 @@
 
 		<?php wp_body_open(); ?>
 
-		<header id="primary">
+		<header class="primary">
 
 			<div class="container">
 
@@ -73,7 +73,7 @@
 
 		</header>
 
-		<main id="primary" class="site-main" role="main">
+		<main class="site-main" role="main">
 
 		<div id="breadcrumb">
 

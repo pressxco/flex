@@ -12,7 +12,7 @@
 ?>
 		</main>
 
-		<footer id="primary">
+		<footer class="primary">
 
 			<div class="container">
 

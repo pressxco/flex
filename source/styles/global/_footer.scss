@@ -2,6 +2,6 @@
   Primary Footer
 ========================================================================== */
 
-footer#primary {
+footer.primary {
 	@apply flex h-16 bg-white text-sm items-center text-gray-700 border-t border-gray-100;
 }
