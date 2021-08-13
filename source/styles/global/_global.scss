@@ -5,7 +5,7 @@
 // WARNING: TRY MAKING EVERYTHING GLOBAL AND MODULAR AS MUCH AS POSSIBLE!
 
 html {
-	font-size: 15.5px;
+	font-size: 16px;
 	height: 100%;
 	scroll-behavior: smooth;
 }
@@ -14,7 +14,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	box-sizing: border-box;
 	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-	font-size: 15px;
 	height: 100%;
 	color: #333;
 	@apply bg-gray-50;
@@ -24,13 +23,9 @@ main {
 	min-height: calc(100vh - 8.5rem);
 }
 
-figure {
-	margin: 0;
-
-	& > img {
-		max-width: 100%;
-	}
-}
+/* =============================================================================
+  	Heading defaults
+========================================================================== */
 
 h1,
 h2,
@@ -86,6 +81,10 @@ h6,
 	letter-spacing: 0;
 }
 
+/* =============================================================================
+  	Paragraph and list defaults
+========================================================================== */
+
 p {
 	@apply leading-7 my-4 text-current;
 }
@@ -98,9 +97,12 @@ ol {
 
 img,
 iframe {
-	max-width: 100%;
-	width: 100%;
+	@apply max-w-full w-full;
 }
+
+/* =============================================================================
+  	Form defaults
+========================================================================== */
 
 input[type="text"],
 input[type="email"],
@@ -120,20 +122,24 @@ select {
 	@apply border-gray-200 border rounded text-gray-600 h-10 text-sm w-full;
 }
 
+/* =============================================================================
+   Button defaults
+========================================================================== */
+
 .btn,
 input[type="submit"] {
 	@apply inline-flex h-9 text-gray-600 border border-gray-200 bg-white font-medium px-6 text-sm rounded cursor-pointer;
 }
+
+/* =============================================================================
+  	Container defaults
+========================================================================== */
 
 .container {
 	@apply mx-auto px-6;
 
 	&--single {
 		@apply px-0 sm:px-6;
-
-		.post {
-			@apply border-none;
-		}
 	}
 
 	&--wide {
@@ -145,6 +151,10 @@ input[type="submit"] {
 	@apply w-full;
 }
 
+/* =============================================================================
+  	Title defaults
+========================================================================== */
+
 .archive-title {
 	@apply block mt-2 mb-6 md:mb-10;
 }
@@ -152,6 +162,10 @@ input[type="submit"] {
 .page-title {
 	@apply text-2xl md:text-3xl tracking-tight mb-0 font-bold text-gray-800;
 }
+
+/* =============================================================================
+  	Misc
+========================================================================== */
 
 .taxonomy-description {
 	@apply text-gray-500 mt-2;
@@ -164,6 +178,10 @@ input[type="submit"] {
 img.lazyload:not([src]) {
 	@apply invisible;
 }
+
+/* =============================================================================
+  	Screen reader
+========================================================================== */
 
 .screen-reader-text {
 	@apply sr-only;

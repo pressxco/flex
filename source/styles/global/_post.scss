@@ -7,6 +7,10 @@
 	@apply bg-white rounded xl:grid xl:items-baseline border border-gray-100;
 }
 
+/* =============================================================================
+  	Post Heading
+	========================================================================== */
+
 .post-heading {
 	@apply px-6 sm:px-10 pt-10 space-y-2.5;
 
@@ -19,6 +23,10 @@
 	@apply px-6 sm:px-10 py-6 space-y-2.5 border-gray-100 border-b;
 }
 
+/* =============================================================================
+  	Post Title
+	========================================================================== */
+
 .post-title {
 	@apply w-full mt-0 text-2xl lg:text-[1.7rem] lg:leading-[2.3rem] font-bold block break-fx;
 
@@ -26,6 +34,10 @@
 		@apply text-2xl lg:text-3xl lg:leading-[2.4rem];
 	}
 }
+
+/* =============================================================================
+  	Post Category
+	========================================================================== */
 
 .post-category {
 	@apply font-semibold text-xsmd;
@@ -35,6 +47,10 @@
 	}
 }
 
+/* =============================================================================
+  	Post Image
+	========================================================================== */
+
 .post-image {
 	@apply relative overflow-hidden rounded-none sm:rounded-t h-44 md:h-64 lg:h-96;
 
@@ -43,8 +59,12 @@
 	}
 }
 
+/* =============================================================================
+  	Post Content
+	========================================================================== */
+
 .post-content {
-	@apply overflow-hidden leading-[1.75rem] text-gray-700 max-w-none overflow-ellipsis line-clamp-3;
+	@apply overflow-hidden leading-[1.75rem] text-gray-700 max-w-none overflow-ellipsis line-clamp-3 break-fx;
 
 	h1,
 	h2,
@@ -71,9 +91,17 @@
 	}
 }
 
+/* =============================================================================
+  	Read More
+	========================================================================== */
+
 .read-more {
 	@apply text-base font-medium;
 }
+
+/* =============================================================================
+  	Post Footer
+	========================================================================== */
 
 .post-footer {
 	@apply flex text-xsmd border-t border-gray-100 mt-10 px-6 sm:px-10;
@@ -82,6 +110,10 @@
 		@apply px-6 sm:px-10 mt-0 border-b;
 	}
 }
+
+/* =============================================================================
+  	Post Data
+	========================================================================== */
 
 .post-data {
 	@apply text-gray-500 font-medium py-4 inline-flex hover:text-gray-700 transition-fx;

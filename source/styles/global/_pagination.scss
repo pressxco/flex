@@ -1,3 +1,7 @@
+/* =============================================================================
+  	Pagination
+	========================================================================== */
+
 .nav-links {
 	@apply bg-white rounded shadow-sm inline-flex divide-x divide-gray-100 text-sm;
 
@@ -9,6 +13,10 @@
 		}
 	}
 }
+
+/* =============================================================================
+  	Pagination in Posts
+	========================================================================== */
 
 .post-nav-links {
 	@apply bg-white rounded shadow-sm inline-flex divide-x divide-gray-100 text-sm items-center;

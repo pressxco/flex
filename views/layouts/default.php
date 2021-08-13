@@ -13,7 +13,7 @@ get_header();
 
 <div id="layout-<?php echo esc_attr( $layout_name ); ?>">
 
-	<?php fx_render( $layout_content ); ?>
+	<?php $layout_content(); ?>
 
 </div>
 
