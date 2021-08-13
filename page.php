@@ -11,9 +11,11 @@
 
 ?>
 
-<?php get_header(); ?>
-
-	<div class="container px-8 pb-10 mx-auto lg:px-6">
+<?php
+fx_layout(
+	'default',
+	function() {
+		?>
 
 		<div class="grid grid-cols-3 gap-7">
 
@@ -35,7 +37,6 @@
 
 		</div>
 
-	</div>
-
-<?php
-get_footer();
+		<?php
+	}
+);

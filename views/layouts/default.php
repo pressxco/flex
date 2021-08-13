@@ -11,9 +11,13 @@
 get_header();
 ?>
 
-<div id="layout-<?php echo esc_attr( $layout_name ); ?>">
+<div id="layout-<?php echo esc_attr( $layout_name ); ?>" data-template="<?php echo esc_attr( get_post_type() ); ?>">
 
-	<?php $layout_content(); ?>
+	<div class="container px-8 pb-10 mx-auto lg:px-6">
+
+		<?php $layout_content(); ?>
+
+	</div>
 
 </div>
 

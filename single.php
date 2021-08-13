@@ -11,9 +11,11 @@
 
 ?>
 
-<?php get_header(); ?>
-
-	<div class="container pb-10 container--single">
+<?php
+fx_layout(
+	'default',
+	function() {
+		?>
 
 		<div class="grid grid-cols-3 gap-7">
 
@@ -35,7 +37,7 @@
 
 		</div>
 
-	</div>
-
-<?php
-	get_footer();
+		<?php
+	}
+);
+?>
