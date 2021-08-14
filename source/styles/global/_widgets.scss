@@ -29,7 +29,9 @@
 	Widget Customizations
 ========================================================================== */
 
-main {
+.widget_search {
+	@apply px-4;
+
 	.search-form {
 		@apply flex;
 
@@ -46,17 +48,17 @@ main {
 			@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600 h-10;
 		}
 	}
+}
 
-	.wp-block-tag-cloud {
-		.tag-cloud-link {
-			@apply text-sm;
-		}
-	}
-
-	.widget_search {
-		@apply px-4;
+.wp-block-tag-cloud {
+	.tag-cloud-link {
+		@apply text-sm;
 	}
 }
+
+/* =============================================================================
+	Search Widget
+========================================================================== */
 
 .wp-block-search__inside-wrapper {
 	@apply flex gap-2;
@@ -67,5 +69,21 @@ main {
 
 	button[type="submit"] {
 		@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600 h-10;
+	}
+}
+
+/* =============================================================================
+	Comments Widget
+========================================================================== */
+
+.wp-block-latest-comments__comment {
+	@apply flex mb-5;
+
+	.wp-block-latest-comments__comment-avatar {
+		@apply w-9 h-9;
+	}
+
+	p {
+		@apply m-0;
 	}
 }
