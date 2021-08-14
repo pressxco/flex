@@ -10,6 +10,10 @@
 		@apply text-base font-medium tracking-tight text-gray-900 mb-0 border-b border-gray-100 pb-4;
 	}
 
+	.wp-block-search__label {
+		@apply hidden;
+	}
+
 	ul {
 		li {
 			@apply leading-loose;
@@ -37,7 +41,8 @@ main {
 			@apply w-full;
 		}
 
-		input[type="submit"] {
+		input[type="submit"],
+		button[type="submit"] {
 			@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600 h-10;
 		}
 	}
@@ -50,5 +55,17 @@ main {
 
 	.widget_search {
 		@apply px-4;
+	}
+}
+
+.wp-block-search__inside-wrapper {
+	@apply flex gap-2;
+
+	input[type="search"] {
+		min-width: 70%;
+	}
+
+	button[type="submit"] {
+		@apply transition-fx hover:bg-blue-600 hover:text-white hover:border-blue-600 h-10;
 	}
 }
