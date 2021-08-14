@@ -322,8 +322,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/includes/utilities/jetpack.php';
 }
 
-// Remove Gutenberg Block Library CSS from loading on the frontend
-function smartwp_remove_wp_block_library_css() {
+/**
+ * Remove Block Library from Frontend
+ */
+function fx_remove_block_library() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'wp-block-library-theme' );
 	wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
