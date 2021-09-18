@@ -8,9 +8,9 @@
  */
 
 	// Don't show on pages.
-	if ( is_page() ) {
-		return;
-	}
+if ( is_page() ) {
+	return;
+}
 
 	$author_id          = get_the_author_meta( 'ID' );
 	$author_image_class = get_the_author_meta( 'description' ) ? 'mt-2' : '';
@@ -54,26 +54,17 @@
 
 			<span class="inline-flex mr-1 text-gray-700"><?php esc_html_e( 'Tags: ', 'flex' ); ?></span>
 
+				<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">
 				<?php
-
-				echo '<span class="text-gray-600 cat-links hover:text-gray-700 transition-fx">';
-
-				printf(
-					wp_kses(
-						/* translators: %1$s: Tags list. */
-						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
+					echo wp_kses_post(
+						printf(
+							/* translators: %1$s: Tags list. */
+							__( '<span class="screen-reader-text">Posted in </span>%1$s', 'flex' ),
+							$tags_list
 						)
-					),
-					$tags_list
-				);
-
-				echo '</span>';
-
+					);
 				?>
+				</span>
 		</div>
 
 	<?php endif; ?>

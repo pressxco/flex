@@ -328,6 +328,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function fx_remove_block_library() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'wp-block-library-theme' );
-	wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS
+	wp_dequeue_style( 'wc-block-style' ); // Remove WooCommerce block CSS.
 }
 add_action( 'wp_enqueue_scripts', 'fx_remove_block_library', 100 );

@@ -17,7 +17,13 @@ $classes = ( $args ) ? $args : '';
 
 			<h1 class="text-3xl font-bold text-gray-800 tracking-tight sm:text-4xl md:text-[2rem] md:leading-[2rem]">
 
-				<?php printf( esc_html__( 'Search Results for: %s', 'flex' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
+				<?php
+					printf(
+						/* translators: %s: searc keywords. */
+						esc_html__( 'Search Results for: %s', 'flex' ),
+						'<span>' . esc_html( get_search_query() ) . '</span>'
+					);
+				?>
 
 			</h1>
 
