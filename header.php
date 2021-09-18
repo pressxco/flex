@@ -75,12 +75,12 @@
 
 		<main class="site-main" role="main">
 
-		<div id="breadcrumb">
+			<div id="breadcrumb">
 
-			<div class="container">
+				<div class="container">
 
-				<?php fx_render( 'views/global/breadcrumbs' ); ?>
+					<?php fx_render( 'views/global/breadcrumbs' ); ?>
+
+				</div>
 
 			</div>
-
-		</div>
