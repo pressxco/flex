@@ -20,10 +20,10 @@
       "phpcs --config-set default_standard WordPress"
     ],
     "test": [
-      "phpcs --ignore=./vendor ./"
+      "phpcs --extensions=php --ignore=./vendor,./node_modules,./.yarn ./"
     ],
     "fix": [
-      "phpcbf --ignore=./vendor ./"
+      "phpcbf --extensions=php --ignore=./vendor,./node_modules,./.yarn ./"
     ]
   }
 }
