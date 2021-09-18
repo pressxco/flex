@@ -28,7 +28,7 @@ mix
   .combine([
     'source/scripts/plugins/moby.js',
     'source/scripts/plugins/lazysizes.js',
-    'source/scripts/bundle.js'
+    'source/scripts/main.js'
   ],
     'dist/scripts/bundle.js'
   );
@@ -42,7 +42,6 @@ mix
       require('postcss-import'),
       require('tailwindcss'),
       require('autoprefixer'),
-
     ]
   });
 
@@ -76,7 +75,7 @@ mix
     proxy: 'http://localhost:8888',
     open: 'external',
     port: 3000,
-    files: ["*.php", 'includes/**/*.php', 'views/**/*.php', "source/**/**/*"]
+    files: ['*.php', 'includes/**/*.php', 'views/**/*.php', 'source/**/**/*']
   });
 
 mix

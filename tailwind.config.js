@@ -1,7 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
-const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
-const { toRgba } = require('tailwindcss/lib/util/withAlphaVariable')
 
 module.exports = {
   mode: 'jit',
@@ -11,7 +8,8 @@ module.exports = {
       './includes/**/*.php',
       './views/**/*.php',
       './safelist.txt',
-      //
+
+      // // Theme root PHP files
       './404.php',
       './archive.php',
       './comments.php',
@@ -23,7 +21,6 @@ module.exports = {
       './search.php',
       './sidebar.php',
       './single.php',
-
     ],
     options: {
       safelist: [],
@@ -32,7 +29,7 @@ module.exports = {
       fontFace: true,
     },
   },
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {
       typography: (theme) => ({
