@@ -11,68 +11,68 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php fx_post_thumbnail(); ?>
+	<?php fx_render('views/blog/post-thumbnail'); ?>
 
-		<div class="post-heading">
+	<div class="post-heading">
 
-			<div class="post-category">
+		<div class="post-category">
 
-				<?php the_category( ', ' ); ?>
-
-			</div>
-
-			<h2 class="post-title">
-
-				<a class="flex items-center text-gray-800 hover:text-opacity-80 transition-fx" href="<?php echo esc_url( get_the_permalink() ); ?>">
-
-					<?php echo esc_html( get_the_title() ); ?>
-
-				</a>
-
-			</h2>
+			<?php the_category( ', ' ); ?>
 
 		</div>
 
-		<div class="w-full px-6 pt-4 space-y-4 overflow-hidden sm:px-10">
+		<h2 class="post-title">
 
-			<div class="post-content">
+			<a class="flex items-center text-gray-800 hover:text-opacity-80 transition-fx" href="<?php echo esc_url( get_the_permalink() ); ?>">
 
-				<?php echo wp_kses_post( has_excerpt( $post->ID ) ? get_the_excerpt() : get_the_content() ); ?>
+				<?php echo esc_html( get_the_title() ); ?>
 
-			</div>
+			</a>
 
-			<div class="read-more">
+		</h2>
 
-				<a class="text-blue-600 transition-fx hover:text-opacity-80" href="<?php echo esc_url( get_the_permalink() ); ?>">
+	</div>
 
-					<?php esc_html_e( 'Read more →', 'flex' ); ?>
+	<div class="w-full px-6 pt-4 space-y-4 overflow-hidden sm:px-10">
 
-				</a>
+		<div class="post-content">
 
-			</div>
+			<?php echo wp_kses_post( has_excerpt( $post->ID ) ? get_the_excerpt() : get_the_content() ); ?>
+
+		</div>
+
+		<div class="read-more">
+
+			<a class="text-blue-600 transition-fx hover:text-opacity-80" href="<?php echo esc_url( get_the_permalink() ); ?>">
+
+				<?php esc_html_e( 'Read more →', 'flex' ); ?>
+
+			</a>
 
 		</div>
 
-		<div class="post-footer">
+	</div>
 
-			<span class="post-data post-author">
+	<div class="post-footer">
 
-				<?php fx_posted_by(); ?>
+		<span class="post-data post-author">
 
-			</span>
+			<?php fx_posted_by(); ?>
 
-			<span class="post-data post-comments">
+		</span>
 
-				<a href="<?php echo esc_url( get_the_permalink() ); ?>#comments"><?php esc_html_e( 'Comments ', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
+		<span class="post-data post-comments">
 
-			</span>
+			<a href="<?php echo esc_url( get_the_permalink() ); ?>#comments"><?php esc_html_e( 'Comments ', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
 
-			<span class="post-data post-date">
+		</span>
 
-				<?php fx_posted_on(); ?>
+		<span class="post-data post-date">
 
-			</span>
+			<?php fx_posted_on(); ?>
 
-		</div>
+		</span>
+
+	</div>
 
 </article>
