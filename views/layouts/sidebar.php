@@ -13,17 +13,13 @@
 
 <div id="layout-<?php echo esc_attr( $layout_name ); ?>">
 
-	<div class="container px-4 py-10 mx-auto lg:px-6">
+	<div class="container px-4 py-10 mx-auto lg:px-6 relative">
 
 		<div class="grid grid-cols-3 gap-7">
 
 			<div class="col-span-3 md:col-span-2">
 
-				<div class="post-loop space-y-7">
-
-					<?php $layout_content(); ?>
-
-				</div>
+				<?php $layout_content(); ?>
 
 			</div>
 

@@ -12,19 +12,23 @@ $template = isset( $args['template'] ) ? $args['template'] : 'views/blog/post';
 
 ?>
 
-<?php
-while ( $loop->have_posts() ) :
-	$loop->the_post();
-	?>
+<div class="post-loop space-y-7">
 
-	<?php fx_render( $template ); ?>
+	<?php
+	while ( $loop->have_posts() ) :
+		$loop->the_post();
+		?>
 
-<?php endwhile; ?>
+		<?php fx_render( $template ); ?>
 
-<div class="pagination">
+	<?php endwhile; ?>
 
-	<?php the_posts_pagination(); ?>
+	<div class="pagination">
+
+		<?php the_posts_pagination(); ?>
+
+	</div>
+
+	<?php wp_reset_postdata(); ?>
 
 </div>
-
-<?php wp_reset_postdata(); ?>
