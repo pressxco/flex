@@ -8,7 +8,7 @@
  * @since 1.0.0
  */
 
-get_header();
+	get_header();
 ?>
 
 <div id="layout-<?php echo esc_attr( $layout_name ); ?>" data-template="<?php echo esc_attr( get_post_type() ); ?>">
@@ -22,4 +22,4 @@ get_header();
 </div>
 
 <?php
-get_footer();
+	get_footer();
