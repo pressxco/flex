@@ -13,7 +13,7 @@
 
 <div id="layout-<?php echo esc_attr( $layout_name ); ?>">
 
-	<div class="container px-4 py-10 mx-auto lg:px-6 relative">
+	<div class="container px-4 py-7 mx-auto lg:px-6 relative">
 
 		<div class="grid grid-cols-3 gap-7">
 

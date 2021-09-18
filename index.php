@@ -13,9 +13,11 @@
 <?php
 fx_layout(
 	'sidebar',
-	function() {
+	function () {
+		?>
 
-		fx_render( 'views/blog/post-loop' );
+		<?php fx_render( 'views/blog/post-loop' ); ?>
 
+		<?php
 	}
 );
