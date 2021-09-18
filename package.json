@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.",
   "scripts": {
-    "dev": "mix",
+    "start": "mix watch",
     "watch": "mix watch",
-    "production": "mix --production"
+    "build": "mix",
+    "build:production": "mix --production"
   },
   "repository": {
     "type": "git",
