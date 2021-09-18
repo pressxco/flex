@@ -10,16 +10,16 @@
  * @since 1.0.0
  */
 
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
+if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+	return;
+}
 
-	if ( is_singular() ) :
-		?>
+if ( is_singular() ) :
+	?>
 
 		<div class="post-image">
 
-			<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail(); ?>
 
 		</div><!-- .post-thumbnail -->
 

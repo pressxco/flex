@@ -33,7 +33,7 @@
 
 			<span class="post-data post-author">
 
-				<?php fx_posted_by(); ?>
+			<?php fx_render( 'views/blog/post-author' ); ?>
 
 			</span>
 
@@ -45,7 +45,7 @@
 
 			<span class="post-data post-date">
 
-				<?php fx_posted_on(); ?>
+				<?php fx_render( 'views/blog/post-date' ); ?>
 
 			</span>
 
@@ -53,7 +53,7 @@
 
 		<?php endif; ?>
 
-		<?php fx_render('views/blog/post-thumbnail'); ?>
+		<?php fx_render( 'views/blog/post-thumbnail' ); ?>
 
 		<div class="w-full px-6 py-8 space-y-4 overflow-hidden sm:px-10">
 
@@ -67,7 +67,7 @@
 
 		</div>
 
-		<?php fx_render('views/blog/post-footer'); ?>
+		<?php fx_render( 'views/blog/post-footer' ); ?>
 
 		<?php comments_template(); ?>
 

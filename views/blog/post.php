@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php fx_render('views/blog/post-thumbnail'); ?>
+	<?php fx_render( 'views/blog/post-thumbnail' ); ?>
 
 	<div class="post-heading">
 
@@ -57,7 +57,7 @@
 
 		<span class="post-data post-author">
 
-			<?php fx_posted_by(); ?>
+			<?php fx_render( 'views/blog/post-author' ); ?>
 
 		</span>
 
@@ -69,7 +69,7 @@
 
 		<span class="post-data post-date">
 
-			<?php fx_posted_on(); ?>
+		<?php fx_render( 'views/blog/post-date' ); ?>
 
 		</span>
 

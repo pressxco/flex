@@ -171,60 +171,6 @@ add_filter( 'wp_get_attachment_image_attributes', 'fx_lazyload_class' );
 
 
 /**
- * Prints HTML with meta information for the current author.
- */
-function fx_posted_by() {
-
-	$byline = sprintf(
-		wp_kses(
-			/* translators: %s: post author. */
-			__( '<span class="screen-reader-text">by </span>%s', 'flex' ),
-			array(
-				'span' => array(
-					'class' => array(),
-				),
-			)
-		),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo wp_kses_post( $byline );
-
-}
-
-
-/**
- * Prints HTML with meta information for the current post-date/time.
- */
-function fx_posted_on() {
-
-	$time_string = sprintf(
-		'<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
-		esc_attr( get_the_date( DATE_W3C ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( DATE_W3C ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		wp_kses(
-			/* translators: %s: post date. */
-			__( '<span class="sr-only">Posted on </span>%s', 'flex' ),
-			array(
-				'span' => array(
-					'class' => array(),
-				),
-			)
-		),
-		wp_kses_post( $time_string )
-	);
-
-	echo '<span class="posted-on">' . wp_kses_post( $posted_on ) . '</span>';
-
-}
-
-
-/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
