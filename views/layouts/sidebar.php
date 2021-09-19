@@ -8,26 +8,22 @@
  * @since 1.0.0
  */
 
-	get_header();
+get_header();
 ?>
 
-<div id="layout-<?php echo esc_attr( $layout_name ); ?>">
+<div id="layout-<?php echo esc_attr( $layout_name ); ?>" class="container px-4 py-7 mx-auto lg:px-6 relative">
 
-	<div class="container px-4 py-7 mx-auto lg:px-6 relative">
+	<div class="grid grid-cols-3 gap-7">
 
-		<div class="grid grid-cols-3 gap-7">
+		<div class="col-span-3 md:col-span-2">
 
-			<div class="col-span-3 md:col-span-2">
+			<?php $layout_content(); ?>
 
-				<?php $layout_content(); ?>
+		</div>
 
-			</div>
+		<div class="col-span-3 md:col-span-1">
 
-			<div class="col-span-3 md:col-span-1">
-
-				<?php get_sidebar(); ?>
-
-			</div>
+			<?php get_sidebar(); ?>
 
 		</div>
 
@@ -36,4 +32,4 @@
 </div>
 
 <?php
-	get_footer();
+get_footer();

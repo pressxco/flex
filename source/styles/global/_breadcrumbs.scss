@@ -3,10 +3,14 @@
 ========================================================================== */
 
 .breadcrumbs {
-	@apply flex mb-1.5 w-full truncate overflow-hidden;
+	@apply flex w-full truncate overflow-hidden absolute z-10;
+
+	&__trail {
+		@apply my-0;
+	}
 
 	&__crumb {
-		@apply inline-flex text-gray-600 text-xsmd font-medium;
+		@apply inline-flex text-gray-600 text-xs font-medium;
 
 		&:before {
 			content: "/";

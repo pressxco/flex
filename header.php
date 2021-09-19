@@ -77,12 +77,4 @@
 
 		<main class="site-main" role="main">
 
-			<div id="breadcrumb">
-
-				<div class="container">
-
-					<?php fx_render( 'views/global/breadcrumbs' ); ?>
-
-				</div>
-
-			</div>
+			<?php fx_render( 'views/global/breadcrumbs' ); ?>

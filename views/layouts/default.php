@@ -8,18 +8,14 @@
  * @since 1.0.0
  */
 
-	get_header();
+get_header();
 ?>
 
-<div id="layout-<?php echo esc_attr( $layout_name ); ?>" data-template="<?php echo esc_attr( get_post_type() ); ?>">
+<div id="layout-<?php echo esc_attr( $layout_name ); ?>" class="container px-8 pb-10 mx-auto lg:px-6">
 
-	<div class="container px-8 pb-10 mx-auto lg:px-6">
-
-		<?php $layout_content(); ?>
-
-	</div>
+	<?php $layout_content(); ?>
 
 </div>
 
 <?php
-	get_footer();
+get_footer();

@@ -18,4 +18,11 @@ $args = array(
 		'title' => '',
 	),
 );
-Hybrid\Breadcrumbs\Trail::display( $args );
+
+?>
+
+<div id="breadcrumb" class="container">
+
+	<?php Hybrid\Breadcrumbs\Trail::display( $args ); ?>
+
+</div>
