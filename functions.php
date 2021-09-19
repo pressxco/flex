@@ -21,7 +21,9 @@ if ( file_exists( $autoload_file ) ) {
 /**
  * Autoload includes
  */
-foreach ( glob( get_template_directory() . '/includes/**/*.php' ) as $filename ) {
+$includes_paths = get_template_directory() . '/includes/**/*.php,' . get_template_directory() . '/includes/*.php';
+
+foreach ( glob( '{' . $includes_paths . '}', GLOB_BRACE ) as $filename ) {
 	require $filename;
 }
 
