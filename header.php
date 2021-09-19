@@ -56,7 +56,9 @@
 								'theme_location' => 'primary',
 								'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
 								'menu_class'     => 'primary-menu',
-								'fallback_cb'    => 'fx_main_menu_fallback',
+								'fallback_cb'    => function() {
+									fx_render( 'views/global/menu-fallback' );
+								},
 								'container'      => false,
 								'depth'          => 3,
 							)

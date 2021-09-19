@@ -311,11 +311,6 @@ require get_template_directory() . '/includes/utilities/fields.php';
 require get_template_directory() . '/includes/components/breadcrumb-class.php';
 
 /**
- * Menu fallback
- */
-require get_template_directory() . '/includes/fallbacks/menu-fallback.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
