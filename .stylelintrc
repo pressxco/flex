@@ -7,9 +7,7 @@
     "no-empty-source": null,
     "no-descending-specificity": null,
     "at-rule-empty-line-before": null,
-    "indentation": [
-      int | "tab"
-    ],
+    "indentation": "tab",
     "at-rule-no-unknown": [
       true,
       {
