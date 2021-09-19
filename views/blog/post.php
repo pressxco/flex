@@ -11,58 +11,31 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php fx_render( 'views/blog/post-heading' ); ?>
+
+	<?php fx_render( 'views/blog/post-meta' ); ?>
+
 	<?php fx_render( 'views/blog/post-thumbnail' ); ?>
 
-	<div class="post-heading">
+	<div class="post-content">
 
-		<div class="post-category">
+		<?php
+		if ( is_single() || is_page() ) {
 
-			<?php the_category( ', ' ); ?>
+			the_content();
+			wp_link_pages();
 
-		</div>
+		} else {
 
-		<h2 class="post-title">
+			the_excerpt();
 
-			<a class="flex items-center text-gray-800 hover:text-opacity-80 transition-fx" href="<?php the_permalink(); ?>">
-
-				<?php the_title(); ?>
-
-			</a>
-
-		</h2>
+		}
+		?>
 
 	</div>
 
-	<div class="w-full px-6 pt-4 space-y-4 overflow-hidden sm:px-10">
+	<?php fx_render( 'views/blog/post-footer' ); ?>
 
-		<div class="post-content">
-
-			<?php the_excerpt(); ?>
-
-		</div>
-
-	</div>
-
-	<div class="post-footer">
-
-		<span class="post-data post-author">
-
-			<?php fx_render( 'views/blog/post-author' ); ?>
-
-		</span>
-
-		<span class="post-data post-comments">
-
-			<a href="<?php the_permalink(); ?>#comments"><?php esc_html_e( 'Comments ', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
-
-		</span>
-
-		<span class="post-data post-date">
-
-		<?php fx_render( 'views/blog/post-date' ); ?>
-
-		</span>
-
-	</div>
+	<?php comments_template(); ?>
 
 </article>

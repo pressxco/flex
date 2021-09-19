@@ -8,7 +8,7 @@
  */
 
 // Don't show on pages.
-if ( is_page() ) {
+if ( is_page() || ! is_single() ) {
 	return;
 }
 

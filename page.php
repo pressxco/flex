@@ -17,7 +17,7 @@ fx_layout(
 	function() {
 		?>
 
-		<?php fx_render( 'views/blog/post-loop', array( 'template' => 'views/blog/post-single' ) ); ?>
+		<?php fx_render( 'views/blog/post-loop' ); ?>
 
 		<?php
 	}
