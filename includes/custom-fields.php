@@ -21,7 +21,7 @@ use Carbon_Fields\Field;
  * Create a sample theme options field.
  */
 function crb_attach_theme_options() {
-	Container::make( 'theme_options', __( 'Theme Options' ) )
+	Container::make( 'theme_options', __( 'Theme Options', 'flex' ) )
 	->add_fields(
 		array(
 			Field::make( 'text', 'crb_text', 'Text Field' ),
