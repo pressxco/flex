@@ -285,7 +285,7 @@ function fx_styles_and_scripts() {
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 	 */
-	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles.bundle.css', array(), wp_get_theme()->get( 'Version' )  );
+	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles.bundle.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	/**
 	 * Theme Scripts
