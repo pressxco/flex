@@ -17,9 +17,19 @@
 
 	</div>
 
-	<h2 class="post-title single">
+	<h2 class="post-title">
 
-		<?php the_title(); ?>
+		<?php
+		if ( ! is_singular() ) {
+			echo '<a href="' . get_permalink() . '">';
+		}
+
+		the_title();
+
+		if ( ! is_singular() ) {
+			echo '</a>';
+		}
+		?>
 
 	</h2>
 
