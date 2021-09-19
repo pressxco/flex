@@ -36,25 +36,6 @@ function dd( $variable ) {
 
 
 /**
- * Reset Image Compression
- *
- * @since 1.0.0
- */
-add_filter(
-	'jpeg_quality',
-	function( $arg ) {
-		return 100;
-	}
-);
-add_filter(
-	'wp_editor_set_quality',
-	function( $arg ) {
-		return 100;
-	}
-);
-
-
-/**
  * FX Icons
  * Request icons with this custom functions.
  * Use only icon name without extension.
@@ -71,8 +52,9 @@ function fx_icon( $icon ) {
 
 }
 
+
 /**
- * FX Template
+ * FX Render
  * Exactly the same thing as get_template_part.
  * Added for sytanx unity of FX.
  *
@@ -88,6 +70,7 @@ function fx_image( $image, $alt = '', $class = 'x-image' ) {
 	echo '<img class="' . esc_attr( $class ) . ' lazyload" src="' . esc_attr( $image_dir_uri ) . esc_attr( $image ) . '" alt="' . esc_attr( $alt ) . '">';
 
 }
+
 
 /**
  * FX Buttons
@@ -121,6 +104,7 @@ function fx_layout( $layout_name, $layout_content, $layout_args = array() ) {
 
 }
 
+
 /**
  * FX Template
  * Exactly the same thing as get_template_part.
@@ -135,59 +119,3 @@ function fx_render( $template, $args = array() ) {
 	return get_template_part( $template, '', $args );
 
 }
-
-
-/**
- * Add `loading="lazy"` attribute to images output by the_post_thumbnail().
- *
- * @param  string       $html The post thumbnail HTML.
- * @param  int          $post_id The post ID.
- * @param  string       $post_thumbnail_id    The post thumbnail ID.
- * @param  string|array $size   The post thumbnail size. Image size or array of width and height values (in that order). Default 'post-thumbnail'.
- * @param  string       $attr Query string of attributes.
- *
- * @return string   The modified post thumbnail HTML.
- */
-function fx_modify_post_thumbnail_html( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
-
-	$html = str_replace( 'src', 'data-src', $html );
-
-	return $html;
-
-}
-add_filter( 'post_thumbnail_html', 'fx_modify_post_thumbnail_html', 10, 5 );
-
-
-/**
- * Add `lazyload` class to images output.
- *
- * @param  array $attr Attributes registered.
- * @return array The modified attributes array.
- */
-function fx_lazyload_class( $attr ) {
-	$attr['class'] .= ' lazyload';
-	return $attr;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'fx_lazyload_class' );
-
-
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function fx_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
-
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'primary' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
-	return $classes;
-}
-add_filter( 'body_class', 'fx_body_classes' );

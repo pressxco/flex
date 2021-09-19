@@ -2,7 +2,7 @@
   Posts
 ========================================================================== */
 
-.post,
+.type-post,
 .type-page {
 	@apply bg-white rounded xl:grid xl:items-baseline border border-gray-100;
 }
@@ -64,7 +64,7 @@
 	========================================================================== */
 
 .post-content {
-	@apply overflow-hidden leading-[1.75rem] text-gray-700 max-w-none overflow-ellipsis line-clamp-3 break-fx;
+	// @apply overflow-hidden leading-[1.75rem] text-gray-700 max-w-none overflow-ellipsis line-clamp-3 break-fx;
 
 	h1,
 	h2,
@@ -96,7 +96,7 @@
 	========================================================================== */
 
 .read-more {
-	@apply text-base font-medium;
+	@apply block text-base font-medium mt-5 text-blue-600 transition-fx hover:text-opacity-80;
 }
 
 /* =============================================================================

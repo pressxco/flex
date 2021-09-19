@@ -23,9 +23,9 @@
 
 		<h2 class="post-title">
 
-			<a class="flex items-center text-gray-800 hover:text-opacity-80 transition-fx" href="<?php echo esc_url( get_the_permalink() ); ?>">
+			<a class="flex items-center text-gray-800 hover:text-opacity-80 transition-fx" href="<?php the_permalink(); ?>">
 
-				<?php echo esc_html( get_the_title() ); ?>
+				<?php the_title(); ?>
 
 			</a>
 
@@ -37,17 +37,7 @@
 
 		<div class="post-content">
 
-			<?php echo wp_kses_post( has_excerpt( $post->ID ) ? get_the_excerpt() : get_the_content() ); ?>
-
-		</div>
-
-		<div class="read-more">
-
-			<a class="text-blue-600 transition-fx hover:text-opacity-80" href="<?php echo esc_url( get_the_permalink() ); ?>">
-
-				<?php esc_html_e( 'Read more →', 'flex' ); ?>
-
-			</a>
+			<?php the_excerpt(); ?>
 
 		</div>
 
@@ -63,7 +53,7 @@
 
 		<span class="post-data post-comments">
 
-			<a href="<?php echo esc_url( get_the_permalink() ); ?>#comments"><?php esc_html_e( 'Comments ', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
+			<a href="<?php the_permalink(); ?>#comments"><?php esc_html_e( 'Comments ', 'flex' ); ?><span>(<?php comments_number( '0', '1', '%' ); ?>)</span></a>
 
 		</span>
 
