@@ -5,30 +5,28 @@
 .breadcrumbs {
 	@apply flex mb-1.5 w-full truncate overflow-hidden;
 
-	.trail-items {
-		li {
-			@apply inline-flex text-gray-600 text-xsmd font-medium;
+	&__crumb {
+		@apply inline-flex text-gray-600 text-xsmd font-medium;
 
-			a {
-				@apply text-gray-600 hover:text-gray-900 transition-fx;
-			}
+		&:before {
+			content: "/";
+			@apply px-2;
+		}
 
+		&:first-child {
 			&:before {
-				content: "/";
-				@apply px-2;
+				content: none;
 			}
+		}
 
-			&.trail-begin {
-				&:before {
-					content: none;
-				}
+		&:last-child {
+			span {
+				@apply text-gray-500;
 			}
+		}
 
-			&.trail-end {
-				span {
-					@apply text-gray-500;
-				}
-			}
+		a {
+			@apply text-gray-600 hover:text-gray-900 transition-fx;
 		}
 	}
 }

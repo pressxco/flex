@@ -8,14 +8,16 @@
  */
 
 /**
- * Do not run if breadcrumb_trail function is not exists.
+ * Do not run on home and front page.
  */
-if ( ! function_exists( 'breadcrumb_trail' ) || is_home() || is_front_page() ) {
+if ( is_home() || is_front_page() ) {
 	return;
 }
 
-$args = array(
-	'show_browse' => false,
-);
 
-breadcrumb_trail( $args );
+$args = array(
+	'labels' => array(
+		'title' => '',
+	),
+);
+Hybrid\Breadcrumbs\Trail::display( $args );
