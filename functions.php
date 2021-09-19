@@ -285,14 +285,14 @@ function fx_styles_and_scripts() {
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 	 */
-	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles/main.css', array(), true );
+	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/dist/styles.bundle.css', array(), wp_get_theme()->get( 'Version' )  );
 
 	/**
 	 * Theme Scripts
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
 	 */
-	wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/dist/scripts/bundle.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/dist/scripts.bundle.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 	// Comment Reply.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

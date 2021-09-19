@@ -8,7 +8,11 @@ mix
   .setPublicPath('./dist');
 
 mix
-  .sass('source/styles/main.scss', 'styles/main.css', { sassOptions: { outputStyle: 'compressed' } })
+  .sass(
+    'source/styles/main.scss',
+    'styles.bundle.css',
+    { sassOptions: { outputStyle: 'compressed' } }
+  )
   .options({
     postCss: [
       require('css-declaration-sorter')({
@@ -26,11 +30,10 @@ mix
 
 mix
   .combine([
-    'source/scripts/plugins/moby.js',
-    'source/scripts/plugins/lazysizes.js',
+    'source/scripts/includes/*',
     'source/scripts/main.js'
   ],
-    'dist/scripts/bundle.js'
+    'dist/scripts.bundle.js'
   );
 
 mix
