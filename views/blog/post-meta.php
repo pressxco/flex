@@ -12,13 +12,34 @@ if ( is_page() ) {
 	return;
 }
 
+$post_author = sprintf(
+	/* translators: %s: post author. */
+	__( '<span class="screen-reader-text">by </span>%s', 'flex' ),
+	'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+);
+
+
+$time_string = sprintf(
+	'<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
+	esc_attr( get_the_date( DATE_W3C ) ),
+	esc_html( get_the_date() ),
+	esc_attr( get_the_modified_date( DATE_W3C ) ),
+	esc_html( get_the_modified_date() )
+);
+
+$posted_on = sprintf(
+	/* translators: %s: post date. */
+	__( '<span class="sr-only">Posted on </span>%s', 'flex' ),
+	$time_string
+);
+
 ?>
 
 <div class="post-footer single">
 
 	<span class="post-data post-author">
 
-		<?php fx_render( 'views/blog/post-author' ); ?>
+		<?php echo wp_kses_post( $post_author ); ?>
 
 	</span>
 
@@ -30,7 +51,7 @@ if ( is_page() ) {
 
 	<span class="post-data post-date">
 
-		<?php fx_render( 'views/blog/post-date' ); ?>
+		<span class="posted-on"><?php echo wp_kses_post( $posted_on ); ?></span>
 
 	</span>
 

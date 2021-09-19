@@ -11,7 +11,27 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php fx_render( 'views/blog/post-heading' ); ?>
+	<div class="<?php echo esc_attr( $post->post_type ); ?>-heading">
+
+		<div class="post-category">
+
+			<?php the_category( ', ' ); ?>
+
+		</div>
+
+		<h2 class="post-title">
+
+			<?php
+			if ( ! is_singular() ) {
+				echo '<a href="' . esc_attr( get_the_permalink() ) . '">' . esc_html( get_the_title() ) . '</a>';
+			} else {
+				the_title();
+			}
+			?>
+
+		</h2>
+
+	</div>
 
 	<?php fx_render( 'views/blog/post-meta' ); ?>
 
