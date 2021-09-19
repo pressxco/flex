@@ -19,17 +19,15 @@
 
 	<h2 class="post-title">
 
-		<?php
-		if ( ! is_singular() ) {
-			echo '<a href="' . get_permalink() . '">';
-		}
+		<?php if ( ! is_singular() ) : ?>
+		<a href="<?php the_permalink(); ?>">
+		<?php endif; ?>
 
-		the_title();
+			<?php the_title(); ?>
 
-		if ( ! is_singular() ) {
-			echo '</a>';
-		}
-		?>
+		<?php if ( ! is_singular() ) : ?>
+			</a>
+		<?php endif; ?>
 
 	</h2>
 
