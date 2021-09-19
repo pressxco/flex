@@ -8,6 +8,13 @@
  */
 
 /**
+ * Do not run if Jetpack is not installed.
+ */
+if ( ! defined( 'JETPACK__VERSION' ) ) {
+	return;
+}
+
+/**
  * Jetpack setup function.
  *
  * See: https://jetpack.com/support/infinite-scroll/

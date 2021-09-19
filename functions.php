@@ -19,6 +19,13 @@ if ( file_exists( $autoload_file ) ) {
 }
 
 /**
+ * Autoload includes
+ */
+foreach ( glob( get_template_directory() . '/includes/**/*.php' ) as $filename ) {
+	require $filename;
+}
+
+/**
  * FX Theme Setup
  * Declares or register functions.
  *
@@ -294,28 +301,6 @@ function fx_styles_and_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'fx_styles_and_scripts' );
-
-/**
- * FX Helper Functions
- */
-require get_template_directory() . '/includes/utilities/functions-helper.php';
-
-/**
- * Carbon Fields Settings
- */
-require get_template_directory() . '/includes/utilities/fields.php';
-
-/**
- * Breadcrumb
- */
-require get_template_directory() . '/includes/components/breadcrumb-class.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/includes/utilities/jetpack.php';
-}
 
 /**
  * Remove Block Library from Frontend
