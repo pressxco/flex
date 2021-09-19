@@ -7,15 +7,15 @@
  * @since 1.0.0
  */
 
-	// Don't show on pages.
+// Don't show on pages.
 if ( is_page() ) {
 	return;
 }
 
-	$author_id          = get_the_author_meta( 'ID' );
-	$author_image_class = get_the_author_meta( 'description' ) ? 'mt-2' : '';
-	$categories_list    = get_the_category_list( esc_html__( ', ', 'flex' ) );
-	$tags_list          = get_the_tag_list( '', ', ' );
+$author_id          = get_the_author_meta( 'ID' );
+$author_image_class = get_the_author_meta( 'description' ) ? 'mt-2' : '';
+$categories_list    = get_the_category_list( esc_html__( ', ', 'flex' ) );
+$tags_list          = get_the_tag_list( '', ', ' );
 
 ?>
 

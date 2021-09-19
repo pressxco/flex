@@ -7,9 +7,7 @@
  * @since 1.0.0
  */
 
-/**
- * Do not run on home and front page.
- */
+// Do not run on home and front page.
 if ( is_home() || is_front_page() ) {
 	return;
 }

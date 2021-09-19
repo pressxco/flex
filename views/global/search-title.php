@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-$classes = ( $args ) ? $args : '';
+$classes = $args ? $args : '';
 
 ?>
 
