@@ -25,3 +25,16 @@ Version: 1.0.0
 @import "global/_pagination";
 @import "global/_theme";
 @import "global/_footer";
+
+// Tailwind customizations
+@layer components {
+	.transition-fx {
+		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 250ms;
+	}
+
+	.break-fx {
+		word-break: break-word;
+	}
+}
