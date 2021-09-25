@@ -6,7 +6,7 @@ header.primary {
 	@apply items-center flex bg-white border-b border-gray-100 relative;
 
 	.wrap {
-		@apply justify-between flex items-center h-16 lg:h-18;
+		@apply justify-between flex items-center h-16;
 	}
 }
 
