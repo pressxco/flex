@@ -36,7 +36,7 @@
 	========================================================================== */
 
 .post-category {
-	@apply font-semibold text-xsmd;
+	@apply font-semibold text-[12px];
 
 	a {
 		@apply text-blue-700 hover:text-opacity-80 transition-fx;
@@ -97,7 +97,7 @@
 	========================================================================== */
 
 .post-footer {
-	@apply flex text-xsmd border-t border-gray-100 mt-10 px-6 sm:px-10;
+	@apply flex text-[12px] border-t border-gray-100 mt-10 px-6 sm:px-10;
 
 	&.single {
 		@apply px-6 sm:px-10 mt-0 border-b;
