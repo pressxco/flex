@@ -1,8 +1,6 @@
-&nbsp;
-
 ![Flex logo](https://pressx.co/flex/flex-logo.svg)
 
-# Flex WordPress Theme
+# Flex WordPress Starter Theme
 [![GitHub release](https://img.shields.io/github/v/release/pressxco/flex?color=ed64a6)](https://github.com/pressxco/flex/releases) [![license](https://img.shields.io/badge/license-GPL--2.0%2B-orange)](https://github.com/pressxco/flex/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/pressxco/flex/pulls) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/pressxco/flex) ![GitHub repo size](https://img.shields.io/github/repo-size/pressxco/flex)
 
 Flex is the simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.
@@ -10,22 +8,18 @@ Flex is the simplest WordPress starter theme including full setup for Sass, Post
 
 ## Getting Started
 
-#### 1. Install Dependencies
+### 1. Install Dependencies
 
 ```bash
-npm install # or yarn install
 composer install
-wp-env start
+yarn install
+yarn wp-env start # Optional step: If you wish to run this theme via WP-ENV and Docker
 ```
 
-#### 2. Modify the  `proxy`  of browsersync in  `package.json`  for your environment
-
-The default `proxy` is `localhost:8888` for [wp-env](https://developer.wordpress.org/block-editor/packages/packages-env/).
-
-#### 3. Start Dev Environment
+### 2. Start Dev Environment
 
 ```bash
-npm run watch # or yarn watch
+yarn dev
 ```
 
 ## Configuration & Defaults
@@ -34,10 +28,10 @@ You can modify the configurations by editing `config` in `webpack.mix.js`.
 
 ```javascript
 mix.browserSync({
-  proxy: 'http://localhost:8888/',
+  proxy: 'http://localhost:8888',
   open: 'external',
   port: 3000,
-  files: ["assets/dist/**/*.php", "*.php", "**/*.php"]
+  files: ['*.php', 'includes/**/*.php', 'views/**/*.php', 'source/**/**/*']
 });
 ```
 

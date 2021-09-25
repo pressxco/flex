@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "mix watch",
     "build": "mix",
-    "build:production": "mix --production"
+    "build:production": "mix --production",
+    "wp-env": "wp-env"
   },
   "repository": {
     "type": "git",
