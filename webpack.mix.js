@@ -77,8 +77,7 @@ mix
   .browserSync({
     proxy: 'http://localhost:8888',
     open: 'external',
-    port: 3000,
-    files: ['*.php', 'includes/**/*.php', 'views/**/*.php', 'source/**/**/*']
+    port: 3000
   });
 
 mix
