@@ -3,10 +3,10 @@
   "description": "Flex is the simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.",
   "type": "project",
   "authors": [
-      {
-          "name": "PressX",
-          "email": "info@pressx.co"
-      }
+    {
+      "name": "PressX",
+      "email": "info@pressx.co"
+    }
   ],
   "require": {
     "htmlburger/carbon-fields": "^3.3",
