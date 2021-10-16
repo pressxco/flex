@@ -8,7 +8,6 @@ module.exports = {
 
       // Theme root PHP files
       './404.php',
-      './archive.php',
       './comments.php',
       './footer.php',
       './functions.php',
