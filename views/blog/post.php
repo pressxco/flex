@@ -33,9 +33,9 @@
 
 	</div>
 
-	<?php fx_render( 'views/blog/post-meta' ); ?>
+	<?php get_template_part( 'views/blog/post-meta' ); ?>
 
-	<?php fx_render( 'views/blog/post-thumbnail' ); ?>
+	<?php get_template_part( 'views/blog/post-thumbnail' ); ?>
 
 	<div class="post-content">
 
@@ -54,7 +54,7 @@
 
 	</div>
 
-	<?php fx_render( 'views/blog/post-footer' ); ?>
+	<?php get_template_part( 'views/blog/post-footer' ); ?>
 
 	<?php comments_template(); ?>
 

@@ -16,9 +16,9 @@ fx_layout(
 	function () {
 		?>
 
-		<?php fx_render( 'views/global/archive-title' ); ?>
+		<?php get_template_part( 'views/global/archive-title' ); ?>
 
-		<?php fx_render( 'views/blog/post-loop' ); ?>
+		<?php get_template_part( 'views/blog/post-loop' ); ?>
 
 		<?php
 	}

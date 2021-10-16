@@ -19,7 +19,7 @@ $template = isset( $args['template'] ) ? $args['template'] : 'views/blog/post';
 		$loop->the_post();
 		?>
 
-		<?php fx_render( $template ); ?>
+		<?php get_template_part( $template ); ?>
 
 	<?php endwhile; ?>
 

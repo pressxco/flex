@@ -103,19 +103,3 @@ function fx_layout( $layout_name, $layout_content, $layout_args = array() ) {
 	require get_template_directory() . "/views/layouts/$layout_name.php";
 
 }
-
-
-/**
- * FX Template
- * Exactly the same thing as get_template_part.
- * Added for sytanx unity of FX.
- *
- * @param string $template Template name.
- * @param array  $args Arguments to pass.
- * @since 1.0.0
- */
-function fx_render( $template, $args = array() ) {
-
-	return get_template_part( $template, '', $args );
-
-}

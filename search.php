@@ -17,8 +17,8 @@ fx_layout(
 	function() {
 		?>
 
-		<?php fx_render( 'views/global/search-title' ); ?>
-		<?php fx_render( 'views/blog/post-loop' ); ?>
+		<?php get_template_part( 'views/global/search-title' ); ?>
+		<?php get_template_part( 'views/blog/post-loop' ); ?>
 
 		<?php
 	}

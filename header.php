@@ -57,7 +57,7 @@
 								'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
 								'menu_class'     => 'primary-menu',
 								'fallback_cb'    => function() {
-									fx_render( 'views/global/menu-fallback' );
+									get_template_part( 'views/global/menu-fallback' );
 								},
 								'container'      => false,
 								'depth'          => 3,
@@ -67,7 +67,7 @@
 
 					</nav>
 
-					<?php fx_render( 'views/global/hamburger' ); ?>
+					<?php get_template_part( 'views/global/hamburger' ); ?>
 
 				</div>
 
@@ -77,4 +77,4 @@
 
 		<main class="site-main" role="main">
 
-			<?php fx_render( 'views/global/breadcrumbs' ); ?>
+			<?php get_template_part( 'views/global/breadcrumbs' ); ?>
