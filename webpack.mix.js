@@ -70,7 +70,7 @@ mix
         files: './source/styles/**/*.scss',
         configFile: './.stylelintrc'
       }),
-    ]
+    ],
   });
 
 mix
