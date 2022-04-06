@@ -15,10 +15,6 @@
 fx_layout(
 	'sidebar',
 	function() {
-		?>
-
-		<?php fx_render( 'views/blog/post-loop' ); ?>
-
-		<?php
+		fx_render( 'views/blog/post-loop' );
 	}
 );

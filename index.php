@@ -14,12 +14,7 @@
 fx_layout(
 	'sidebar',
 	function () {
-		?>
-
-		<?php fx_render( 'views/global/archive-title' ); ?>
-
-		<?php fx_render( 'views/blog/post-loop' ); ?>
-
-		<?php
+		fx_render( 'views/global/archive-title' );
+		fx_render( 'views/blog/post-loop' );
 	}
 );

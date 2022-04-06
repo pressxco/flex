@@ -15,11 +15,7 @@
 fx_layout(
 	'sidebar',
 	function() {
-		?>
-
-		<?php fx_render( 'views/global/search-title' ); ?>
-		<?php fx_render( 'views/blog/post-loop' ); ?>
-
-		<?php
+		fx_render( 'views/global/search-title' );
+		fx_render( 'views/blog/post-loop' );
 	}
 );

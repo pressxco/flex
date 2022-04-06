@@ -16,7 +16,7 @@
 
 			<div class="container">
 
-				<p class="copyright"><?php esc_html_e( '© 2020 proudly developed by PressX.', 'flex' ); ?></p>
+				<p class="copyright"><?php esc_html_e( '© 2022 proudly developed by PressX.', 'flex' ); ?></p>
 
 			</div>
 
